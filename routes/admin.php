@@ -29,13 +29,14 @@ use Illuminate\Support\Facades\Auth;
 Route::group(['prefix' => 'admin'], function(){
     Route::get('/', function () {
         return redirect('/admin/home');
-    })->name('admin.home');
+    })->name('admin.root');
     
     Auth::routes(['register' => false]);
 });
 
 
 Route::get('/admin/home', [HomeController::class, 'index'])->name('admin.home');
+Route::get('admin/dashboard', [HomeController::class, 'index'])->name('admin.dashboard');
 Route::prefix('admin')->group(function () {
     // slider
     Route::get('/slider/add',[sliderController::class,'add'])->name('slider.add');

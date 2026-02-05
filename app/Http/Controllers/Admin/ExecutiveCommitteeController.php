@@ -35,6 +35,10 @@ class ExecutiveCommitteeController extends Controller
             'designation' => $request->designation,
             'bio' => $request->bio,
             'photo' => $photoName,
+            'facebook' => $request->facebook,
+            'twitter' => $request->twitter,
+            'instagram' => $request->instagram,
+            'youtube' => $request->youtube,
             'order' => $request->order ?? 0
         );
 
@@ -98,6 +102,10 @@ class ExecutiveCommitteeController extends Controller
             'designation' => $request->designation,
             'bio' => $request->bio,
             'photo' => $photoName,
+            'facebook' => $request->facebook,
+            'twitter' => $request->twitter,
+            'instagram' => $request->instagram,
+            'youtube' => $request->youtube,
             'order' => $request->order ?? 0
         );
 

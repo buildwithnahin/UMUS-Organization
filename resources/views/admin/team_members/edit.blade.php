@@ -43,6 +43,22 @@
                             <label for="bio" class="form-label">Bio (Optional)</label>
                             <textarea id="bio" name="bio" class="form-control" rows="3">{{ $data->bio }}</textarea>
                         </div>
+                        <div class="col-md-6">
+                            <label for="facebook" class="form-label">Facebook URL (Optional)</label>
+                            <input type="url" name="facebook" class="form-control" id="facebook" value="{{ $data->facebook }}" placeholder="https://facebook.com/username">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="twitter" class="form-label">Twitter URL (Optional)</label>
+                            <input type="url" name="twitter" class="form-control" id="twitter" value="{{ $data->twitter }}" placeholder="https://twitter.com/username">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="instagram" class="form-label">Instagram URL (Optional)</label>
+                            <input type="url" name="instagram" class="form-control" id="instagram" value="{{ $data->instagram }}" placeholder="https://instagram.com/username">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="youtube" class="form-label">YouTube URL (Optional)</label>
+                            <input type="url" name="youtube" class="form-control" id="youtube" value="{{ $data->youtube }}" placeholder="https://youtube.com/channel/...">
+                        </div>
                         <div class="col-md-12">
                             <label for="order" class="form-label">Order</label>
                             <input type="number" name="order" class="form-control" id="order" value="{{ $data->order }}">

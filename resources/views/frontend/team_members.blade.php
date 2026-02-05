@@ -51,10 +51,29 @@
                                             <p class="small">{{ Str::limit($member->bio, 80) }}</p>
                                             @endif
                                             <div class="d-flex justify-content-center mt-3">
-                                                <a href="{{ application()->facebook }}" target="blank"><i class="fa-brands fa-facebook-f p-3 border m-1 rounded"></i></a>
-                                                <a href="{{ application()->twitter }}" target="blank"><i class="fa-brands fa-twitter p-3 border m-1 rounded"></i></a>
-                                                <a href="{{ application()->instagram }}" target="blank"><i class="fa-brands fa-instagram p-3 border m-1 rounded"></i></a>
-                                                <a href="{{ application()->youtube }}" target="blank"><i class="fa-brands fa-youtube p-3 border m-1 rounded"></i></a>
+                                                @if($member->facebook)
+                                                <a href="{{ $member->facebook }}" target="_blank"><i class="fa-brands fa-facebook-f p-3 border m-1 rounded"></i></a>
+                                                @elseif(application()->facebook)
+                                                <a href="{{ application()->facebook }}" target="_blank"><i class="fa-brands fa-facebook-f p-3 border m-1 rounded"></i></a>
+                                                @endif
+                                                
+                                                @if($member->twitter)
+                                                <a href="{{ $member->twitter }}" target="_blank"><i class="fa-brands fa-twitter p-3 border m-1 rounded"></i></a>
+                                                @elseif(application()->twitter)
+                                                <a href="{{ application()->twitter }}" target="_blank"><i class="fa-brands fa-twitter p-3 border m-1 rounded"></i></a>
+                                                @endif
+                                                
+                                                @if($member->instagram)
+                                                <a href="{{ $member->instagram }}" target="_blank"><i class="fa-brands fa-instagram p-3 border m-1 rounded"></i></a>
+                                                @elseif(application()->instagram)
+                                                <a href="{{ application()->instagram }}" target="_blank"><i class="fa-brands fa-instagram p-3 border m-1 rounded"></i></a>
+                                                @endif
+                                                
+                                                @if($member->youtube)
+                                                <a href="{{ $member->youtube }}" target="_blank"><i class="fa-brands fa-youtube p-3 border m-1 rounded"></i></a>
+                                                @elseif(application()->youtube)
+                                                <a href="{{ application()->youtube }}" target="_blank"><i class="fa-brands fa-youtube p-3 border m-1 rounded"></i></a>
+                                                @endif
                                             </div>
                                         </figcaption>
                                         </figure>

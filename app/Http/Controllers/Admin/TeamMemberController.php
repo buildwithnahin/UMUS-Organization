@@ -36,6 +36,10 @@ class TeamMemberController extends Controller
             'department' => $request->department,
             'bio' => $request->bio,
             'photo' => $photoName,
+            'facebook' => $request->facebook,
+            'twitter' => $request->twitter,
+            'instagram' => $request->instagram,
+            'youtube' => $request->youtube,
             'order' => $request->order ?? 0
         );
 
@@ -100,6 +104,10 @@ class TeamMemberController extends Controller
             'department' => $request->department,
             'bio' => $request->bio,
             'photo' => $photoName,
+            'facebook' => $request->facebook,
+            'twitter' => $request->twitter,
+            'instagram' => $request->instagram,
+            'youtube' => $request->youtube,
             'order' => $request->order ?? 0
         );
 

@@ -49,6 +49,22 @@
               @if($member->bio)
               <p class="card-text small">{{ Str::limit($member->bio, 100) }}</p>
               @endif
+              @if($member->facebook || $member->twitter || $member->instagram || $member->youtube)
+              <div class="social-links mt-2">
+                @if($member->facebook)
+                <a href="{{ $member->facebook }}" target="_blank" class="btn btn-sm btn-outline-primary me-1"><i class="bx bxl-facebook"></i></a>
+                @endif
+                @if($member->twitter)
+                <a href="{{ $member->twitter }}" target="_blank" class="btn btn-sm btn-outline-info me-1"><i class="bx bxl-twitter"></i></a>
+                @endif
+                @if($member->instagram)
+                <a href="{{ $member->instagram }}" target="_blank" class="btn btn-sm btn-outline-danger me-1"><i class="bx bxl-instagram"></i></a>
+                @endif
+                @if($member->youtube)
+                <a href="{{ $member->youtube }}" target="_blank" class="btn btn-sm btn-outline-danger"><i class="bx bxl-youtube"></i></a>
+                @endif
+              </div>
+              @endif
             </div>
           </div>
         </div>

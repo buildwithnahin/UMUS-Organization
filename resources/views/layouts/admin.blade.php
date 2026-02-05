@@ -123,6 +123,36 @@
 						</li>
 					</ul>
 				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class="fadeIn animated bx bx-donate-heart"></i>
+						</div>
+						<div class="menu-title">Donate Now</div>
+					</a>
+					<ul>
+						<li>
+                            <a href="#"><i class="bx bx-right-arrow-alt"></i>Add Donation Option</a>
+						</li>
+						<li>
+                            <a href="#"><i class="bx bx-right-arrow-alt"></i>All Donation Options</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class="fadeIn animated bx bx-target-lock"></i>
+						</div>
+						<div class="menu-title">Key Focus Area</div>
+					</a>
+					<ul>
+						<li>
+                            <a href="#"><i class="bx bx-right-arrow-alt"></i>Add Focus Area</a>
+						</li>
+						<li>
+                            <a href="#"><i class="bx bx-right-arrow-alt"></i>All Focus Areas</a>
+						</li>
+					</ul>
+				</li>
 				{{-- <li>
 					<a href="{{ route('logo.create') }}">
 						<div class="parent-icon"><i class='bx bx-cookie'></i>

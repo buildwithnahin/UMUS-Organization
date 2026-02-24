@@ -7,6 +7,10 @@
   <img src="https://img.shields.io/badge/MySQL-5.7+-orange?style=for-the-badge&logo=mysql" alt="MySQL">
 </p>
 
+> 🚀 **Quick Start:** For complete installation instructions, see **[INSTALLATION.md](INSTALLATION.md)**
+> 
+> ⚠️ **IMPORTANT:** When cloning this project, always import `database_backup_20260224.sql` to get all UMUS data, logos, and content. Do NOT run migrations only!
+
 ## 📖 About The Project
 
 **Uddipto Mohila Unnayan Sangstha (UMUS)** is a modern, fully responsive NGO website built with Laravel, designed to empower Dalit women and children in Satkhira district, Bangladesh. The platform features a comprehensive admin panel for content management and a beautifully designed frontend showcasing the organization's mission, programs, and impact.

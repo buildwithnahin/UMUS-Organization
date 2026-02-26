@@ -24,7 +24,7 @@ Route::get('/', function () {
     return view('home', compact('slider', 'project', 'news', 'gallery', 'application', 'programs', 'stories', 'impact'));
 });
 
-Route::post('user/subscribe', [frontController::class, 'subscribe'])->name('user.subscribe');
+// Route::post('user/subscribe', [frontController::class, 'subscribe'])->name('user.subscribe');
 
 // About us
 Route::get('about/us', [frontController::class, 'about_us'])->name('about.us');

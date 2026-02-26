@@ -1,5 +1,5 @@
 {{-- Footer started --}}
-<div class="bg-dark" style="border-top:5px solid #28a745;">
+<div style="background-color: #6C3483; border-top:5px solid #9B59B6;">
     <div class="container py-5">
         <div class="row" id="footer_link_wrapper">
             {{-- logo and short description --}}
@@ -45,14 +45,38 @@
                     </div>
                     <div class="col-md-3 py-4">
                         <h5 class="pb-3">CONTACT</h5>
+                        
+                        @if($headOfficeContact && $headOfficeContact->address)
                         <div class="d-flex py-2" style="font-size: 14px;">
                             <div><i class="fa-solid fa-location-dot mx-2"></i></div>
-                            <div>Tala, Satkhira, Bangladesh</div>
+                            <div>{{ $headOfficeContact->address }}</div>
                         </div>
+                        @endif
+                        
+                        @if($headOfficeContact && ($headOfficeContact->mobile || $headOfficeContact->mobile2))
                         <div class="d-flex py-2" style="font-size: 14px;">
                             <div><i class="fa-solid fa-phone mx-2"></i></div>
-                            <div>01712-345678 <br>  01812-345678 </div>
+                            <div>
+                                @if($headOfficeContact->mobile)
+                                    {{ $headOfficeContact->mobile }}
+                                    @if($headOfficeContact->mobile2)
+                                        <br>
+                                    @endif
+                                @endif
+                                @if($headOfficeContact->mobile2)
+                                    {{ $headOfficeContact->mobile2 }}
+                                @endif
+                            </div>
                         </div>
+                        @endif
+                        
+                        @if($headOfficeContact && $headOfficeContact->email)
+                        <div class="d-flex py-2" style="font-size: 14px;">
+                            <div><i class="fa-solid fa-envelope mx-2"></i></div>
+                            <div>{{ $headOfficeContact->email }}</div>
+                        </div>
+                        @endif
+                        
                         <div>
                             <ul class="d-flex">
                                 <li class="me-2">

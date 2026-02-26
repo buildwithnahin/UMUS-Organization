@@ -31,9 +31,7 @@ class galleryController extends Controller
         $gallery = [
             'title' => $request->title,
             'description' => $request->description,
-            'image' => $imageName,
-            'created_at' => now(),
-            'updated_at' => now()
+            'image' => $imageName
         ];
 
         DB::table('gallery')->insert($gallery);
@@ -93,8 +91,7 @@ class galleryController extends Controller
         $galleryData = [
             'title' => $request->title,
             'description' => $request->description,
-            'image' => $imageName,
-            'updated_at' => now()
+            'image' => $imageName
         ];
 
         DB::table('gallery')->where('id', $id)->update($galleryData);

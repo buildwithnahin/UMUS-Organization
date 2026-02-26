@@ -1,0 +1,122 @@
+/* ========================================
+   UMUS Admin Panel Theme Colors
+   Primary: Purple (#9B59B6)
+   ======================================== */
+
+/* Sidebar Logo Text */
+.logo-text.text-success {
+    color: #9B59B6 !important;
+}
+
+/* Toggle Icon */
+.toggle-icon .bx.text-success {
+    color: #9B59B6 !important;
+}
+
+/* Sidebar Menu Active */
+.metismenu li.mm-active > a {
+    background-color: #F5F3F7;
+    color: #9B59B6 !important;
+    border-left: 3px solid #9B59B6;
+}
+
+/* Sidebar Menu Hover */
+.metismenu a:hover {
+    background-color: #FEF5E7;
+    color: #9B59B6;
+}
+
+/* Primary Button in Admin */
+.btn-primary {
+    background-color: #9B59B6 !important;
+    border-color: #9B59B6 !important;
+}
+
+.btn-primary:hover {
+    background-color: #6C3483 !important;
+    border-color: #6C3483 !important;
+}
+
+/* Success Elements */
+.text-success, .badge-success, .bg-success {
+    background-color: #27AE60 !important;
+    color: #fff !important;
+}
+
+/* Info/Warning Elements */
+.text-warning, .badge-warning {
+    color: #F39C12 !important;
+}
+
+.bg-warning {
+    background-color: #F39C12 !important;
+}
+
+/* Danger Elements - Use Purple */
+.text-danger, .badge-danger {
+    color: #9B59B6 !important;
+}
+
+.bg-danger {
+    background-color: #9B59B6 !important;
+}
+
+/* Links */
+a {
+    color: #9B59B6;
+}
+
+a:hover {
+    color: #6C3483;
+}
+
+/* Card Headers */
+.card-header {
+    background-color: #F5F3F7;
+    border-bottom: 2px solid #9B59B6;
+}
+
+/* Table Striped */
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #FEF5E7;
+}
+
+/* Focus State */
+.form-control:focus, .form-select:focus {
+    border-color: #9B59B6;
+    box-shadow: 0 0 0 0.2rem rgba(155, 89, 182, 0.25);
+}
+
+/* Pagination */
+.pagination .page-item.active .page-link {
+    background-color: #9B59B6;
+    border-color: #9B59B6;
+}
+
+.pagination .page-link {
+    color: #9B59B6;
+}
+
+.pagination .page-link:hover {
+    color: #6C3483;
+    background-color: #F5F3F7;
+}
+
+/* Widgets/Cards */
+.widget-icon {
+    background-color: #9B59B6;
+}
+
+/* Progress Bars */
+.progress-bar {
+    background-color: #9B59B6;
+}
+
+/* Badges */
+.badge-primary {
+    background-color: #9B59B6 !important;
+}
+
+.badge-info {
+    background-color: #3498DB !important;
+}

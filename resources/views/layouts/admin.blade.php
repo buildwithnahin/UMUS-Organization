@@ -25,6 +25,7 @@
 	<link rel="stylesheet" href="{{ asset('admin-assets/assets/css/dark-theme.css') }}" />
 	<link rel="stylesheet" href="{{ asset('admin-assets/assets/css/semi-dark.css') }}" />
 	<link rel="stylesheet" href="{{ asset('admin-assets/assets/css/header-colors.css') }}" />
+	<link rel="stylesheet" href="{{ asset('admin-assets/assets/css/admin-theme.css') }}" />
 	<title>UMUS | Admin</title>
 </head>
 
@@ -112,7 +113,7 @@
 						</li>
 					</ul>
 				</li>
-				<li>
+				{{-- <li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="fadeIn animated bx bx-bell"></i>
 						</div>
@@ -123,7 +124,7 @@
                             <a href="{{ route('subscribe.all') }}"><i class="bx bx-right-arrow-alt"></i>All Subscribe</a>
 						</li>
 					</ul>
-				</li>
+				</li> --}}
 				<li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="fadeIn animated bx bx-donate-heart"></i>

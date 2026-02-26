@@ -25,7 +25,7 @@ use App\Http\Controllers\Admin\projectArchiveController;
 use App\Http\Controllers\Admin\projectController;
 use App\Http\Controllers\Admin\sliderController;
 use App\Http\Controllers\Admin\StoryController;
-use App\Http\Controllers\Admin\subscribeController;
+// use App\Http\Controllers\Admin\subscribeController;
 use App\Http\Controllers\Admin\StrategicPlanController;
 use App\Http\Controllers\Admin\TeamMemberController;
 use App\Http\Controllers\Admin\VolunteerController;
@@ -85,8 +85,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('/gallery/update/{id}', [galleryController::class, 'update'])->name('gallery.update');
 
     // Subscribe
-    Route::get('admin/subscribe', [subscribeController::class, 'index'])->name('subscribe.all');
-    Route::get('admin/subscribe/delete/{id}', [subscribeController::class, 'destroy'])->name('subscribe.delete');
+    // Route::get('admin/subscribe', [subscribeController::class, 'index'])->name('subscribe.all');
+    // Route::get('admin/subscribe/delete/{id}', [subscribeController::class, 'destroy'])->name('subscribe.delete');
 
     // Key Focus Area (Dynamic)
     Route::get('focus-areas/add', [FocusAreaController::class, 'create'])->name('admin.focus_areas.add');

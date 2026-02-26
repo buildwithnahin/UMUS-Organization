@@ -6,12 +6,12 @@ Uddipto Mohila Unnayan Sangstha
 
 @section('content')
 {{-- slider --}}
-<div id="carouselExampleIndicators" class="carousel slide hero-slider" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide hero-slider" data-bs-ride="carousel">
     <div class="carousel-inner">
-        @foreach ($slider as $skey => $slider)
+        @foreach ($slider as $skey => $slide)
         <div class="carousel-item @if($skey == 0) active @endif">
             <div class="slider-image-wrapper">
-                <img src="{{ asset('images/slider/'.$slider->image) }}" class="d-block w-100 slider-image" alt="UMUS">
+                <img src="{{ asset('images/slider/'.$slide->image) }}" class="d-block w-100 slider-image" alt="UMUS">
                 <div class="slider-overlay"></div>
             </div>
             <div class="carousel-caption slider-caption">
@@ -19,11 +19,11 @@ Uddipto Mohila Unnayan Sangstha
                     <div class="row">
                         <div class="col-lg-8 col-md-10">
                             <h1 class="text-white text-start slider-title mb-3" data-aos="fade-up" data-aos-delay="100">
-                                {{ $slider->title }}
+                                {{ $slide->title }}
                             </h1>
                             <div class="slider-divider mb-3" data-aos="fade-up" data-aos-delay="200"></div>
                             <p class="text-white slider-description mb-4" data-aos="fade-up" data-aos-delay="300">
-                                {{ $slider->description }}
+                                {{ $slide->description }}
                             </p>
                             <a href="{{ route('donate') }}" class="btn btn-warning btn-lg slider-btn" data-aos="fade-up" data-aos-delay="400">
                                 <i class="fa-solid fa-sack-dollar"></i> Donate Now
@@ -37,21 +37,21 @@ Uddipto Mohila Unnayan Sangstha
     </div>
     
     <!-- Carousel Controls -->
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
+        <span class="visually-hidden">Next</span>
+    </button>
     
     <!-- Carousel Indicators -->
-    <ol class="carousel-indicators">
+    <div class="carousel-indicators">
         @foreach ($slider as $skey => $slide)
-        <li data-target="#carouselExampleIndicators" data-slide-to="{{ $skey }}" class="@if($skey == 0) active @endif"></li>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $skey }}" class="@if($skey == 0) active @endif" aria-current="@if($skey == 0) true @endif" aria-label="Slide {{ $skey + 1 }}"></button>
         @endforeach
-    </ol>
+    </div>
 </div>
 
 <style>
@@ -155,7 +155,7 @@ Uddipto Mohila Unnayan Sangstha
 }
 
 .carousel-indicators li.active {
-    background-color: #dc3545;
+    background-color: #9B59B6;
     transform: scale(1.2);
 }
 
@@ -377,7 +377,7 @@ Uddipto Mohila Unnayan Sangstha
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, #28a745, #20c997);
+    background: linear-gradient(90deg, #9B59B6, #D4A4F4);
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -699,7 +699,7 @@ Uddipto Mohila Unnayan Sangstha
                             <div class="news-meta mb-3">
                                 <span class="text-secondary small">
                                     <i class="fas fa-calendar-alt me-1"></i>
-                                    {{ $data->created_at ? \Carbon\Carbon::parse($data->created_at)->format('M d, Y') : 'Recent' }}
+                                    {{ isset($data->created_at) ? \Carbon\Carbon::parse($data->created_at)->format('M d, Y') : 'Recent' }}
                                 </span>
                             </div>
                             <p class="card-text text-secondary flex-grow-1" style="line-height: 1.6;">
@@ -795,10 +795,18 @@ Uddipto Mohila Unnayan Sangstha
         </div>
 
         {{-- photo --}}
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 px-3">
             @foreach ($gallery as $key => $data)
-                <div class="col mt-3">
-                    <img src="{{ asset('images/gallery/'.$data->image) }}" class="img-fluid rounded" alt="image">
+                <div class="col">
+                    <div class="gallery-item">
+                        <img src="{{ asset('images/gallery/'.$data->image) }}" alt="{{ $data->title }}">
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h5>{{ $data->title }}</h5>
+                                <p>{{ Str::limit($data->description, 60) }}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             @endforeach
         </div>
@@ -808,6 +816,79 @@ Uddipto Mohila Unnayan Sangstha
         </div>
     </div>
 </div>
+
+<style>
+.gallery-item {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    height: 100%;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-content {
+    color: white;
+    width: 100%;
+}
+
+.gallery-content h5 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.gallery-content p {
+    font-size: 0.9rem;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 576px) {
+    .gallery-item {
+        height: 250px;
+    }
+}
+</style>
+
 {{-- End of Photo Gallery --}}
 
 {{-- Impact Section --}}
@@ -981,14 +1062,14 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
 
         {{-- Rating Filter --}}
-        <div class="text-center mb-4">
+        {{-- <div class="text-center mb-4">
             <button class="btn btn-outline-danger btn-sm me-2 filter-btn active" data-rating="0"><i class="fa fa-star"></i> All Stories</button>
             <button class="btn btn-outline-success btn-sm me-2 filter-btn" data-rating="5"><i class="fa fa-star"></i> 5 Star</button>
             <button class="btn btn-outline-success btn-sm me-2 filter-btn" data-rating="4"><i class="fa fa-star"></i> 4 Star</button>
             <button class="btn btn-outline-primary btn-sm me-2 filter-btn" data-rating="3"><i class="fa fa-star"></i> 3 Star</button>
             <button class="btn btn-outline-secondary btn-sm me-2 filter-btn" data-rating="2"><i class="fa fa-star"></i> 2 Star</button>
             <button class="btn btn-outline-secondary btn-sm filter-btn" data-rating="1"><i class="fa fa-star"></i> 1 Star</button>
-        </div>
+        </div> --}}
 
         {{-- Success Stories Cards --}}
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 px-3">
@@ -1106,7 +1187,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 {{-- End of Success Stories --}}
 
-<script>
+{{-- <script>
 // Success Stories Filter
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-btn');
@@ -1177,7 +1258,7 @@ document.addEventListener('DOMContentLoaded', function() {
         allStoriesBtn.classList.add('btn-danger');
     }
 });
-</script>
+</script> --}}
 
 {{-- Get Involved Section --}}
 <div class="get-involved-section py-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); position: relative; overflow: hidden;">
@@ -1191,10 +1272,10 @@ document.addEventListener('DOMContentLoaded', function() {
             <p class="text-white fs-5">Join our mission to create lasting change in Satkhira communities</p>
         </div>
 
-        <!-- Three Action Cards -->
-        <div class="row g-4">
+        <!-- Two Action Cards -->
+        <div class="row g-4 justify-content-center">
             <!-- Card 1: Sponsor -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-6 col-md-6">
                 <div class="get-involved-card h-100 text-center p-4">
                     <div class="get-involved-icon mb-4">
                         <div class="icon-wrapper mx-auto" style="width: 100px; height: 100px; background: rgba(255, 215, 0, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
@@ -1205,7 +1286,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="text-white-50 mb-4" style="line-height: 1.6;">
                         Your sponsorship drives sustainable change and empowers marginalized communities across Satkhira district.
                     </p>
-                    <a href="{{ route('contact') }}" class="btn btn-light btn-lg w-100">
+                    <a href="{{ route('donate') }}" class="btn btn-light btn-lg w-100">
                         <i class="fa-solid fa-handshake me-2"></i>Become a Sponsor
                     </a>
                     <small class="text-white-50 d-block mt-3">Custom opportunities available</small>
@@ -1213,7 +1294,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
 
             <!-- Card 2: Volunteer -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-6 col-md-6">
                 <div class="get-involved-card h-100 text-center p-4">
                     <div class="get-involved-icon mb-4">
                         <div class="icon-wrapper mx-auto" style="width: 100px; height: 100px; background: rgba(76, 175, 80, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
@@ -1233,8 +1314,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
 
-            <!-- Card 3: Newsletter -->
-            <div class="col-lg-4 col-md-12">
+            {{-- Card 3: Newsletter --}}
+            {{-- <div class="col-lg-4 col-md-12">
                 <div class="get-involved-card h-100 text-center p-4">
                     <div class="get-involved-icon mb-4">
                         <div class="icon-wrapper mx-auto" style="width: 100px; height: 100px; background: rgba(33, 150, 243, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
@@ -1276,7 +1357,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </form>
                     <small class="text-white-50 d-block mt-3">Unsubscribe anytime</small>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>

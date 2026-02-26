@@ -1,0 +1,190 @@
+/* ========================================
+   UMUS Theme Colors - Women Empowerment
+   Primary: Purple (#9B59B6)
+   Secondary: Gold (#F39C12)  
+   Accent: Green (#27AE60)
+   Supporting: Blue (#3498DB)
+   ======================================== */
+
+:root {
+    --primary-color: #9B59B6;
+    --primary-dark: #6C3483;
+    --primary-light: #D4A4F4;
+    
+    --secondary-color: #F39C12;
+    --secondary-dark: #D68910;
+    --secondary-light: #FDB949;
+    
+    --accent-color: #27AE60;
+    --accent-dark: #229954;
+    --accent-light: #58D68D;
+    
+    --supporting-color: #3498DB;
+    --supporting-dark: #2874A6;
+    --supporting-light: #5DADE2;
+    
+    --text-dark: #2C2C2C;
+    --text-gray: #666666;
+    --text-light: #F5F5F5;
+}
+
+/* Button Overrides */
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+}
+
+.btn-warning {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+    color: #fff !important;
+}
+
+.btn-warning:hover {
+    background-color: var(--secondary-dark) !important;
+    border-color: var(--secondary-dark) !important;
+}
+
+.btn-success {
+    background-color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+}
+
+.btn-success:hover {
+    background-color: var(--accent-dark) !important;
+    border-color: var(--accent-dark) !important;
+}
+
+.btn-danger {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.btn-danger:hover {
+    background-color: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+}
+
+.btn-outline-danger {
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.btn-outline-danger:hover {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #fff !important;
+}
+
+/* Badge Colors */
+.badge.bg-success {
+    background-color: var(--accent-color) !important;
+}
+
+.badge.bg-danger {
+    background-color: var(--primary-color) !important;
+}
+
+.badge.bg-warning {
+    background-color: var(--secondary-color) !important;
+}
+
+.badge.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+/* Links */
+a {
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* Background Colors */
+.bg-primary-custom {
+    background-color: var(--primary-color) !important;
+    color: #fff;
+}
+
+.bg-secondary-custom {
+    background-color: var(--secondary-color) !important;
+    color: #fff;
+}
+
+.bg-accent-custom {
+    background-color: var(--accent-color) !important;
+    color: #fff;
+}
+
+/* Text Colors */
+.text-primary-custom {
+    color: var(--primary-color) !important;
+}
+
+.text-secondary-custom {
+    color: var(--secondary-color) !important;
+}
+
+.text-accent-custom {
+    color: var(--accent-color) !important;
+}
+
+/* Navbar Links */
+.navbar .nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Section Backgrounds */
+.section-light-purple {
+    background-color: #F5F3F7;
+}
+
+.section-light-gold {
+    background-color: #FEF5E7;
+}
+
+/* Card Hover Effects */
+.card:hover {
+    box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Statistics/Impact Numbers */
+.stat-number {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Footer Links */
+footer a {
+    color: #E8E8E8;
+}
+
+footer a:hover {
+    color: var(--secondary-color);
+}
+
+/* Focus States */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(155, 89, 182, 0.25);
+}
+
+/* Custom Slider Button */
+.slider-btn {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+    color: #fff !important;
+}
+
+.slider-btn:hover {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}

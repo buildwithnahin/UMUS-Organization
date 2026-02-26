@@ -1,9 +1,13 @@
-<div style="border-bottom:5px solid #28a745;">
+<div style="border-bottom:5px solid #9B59B6;">
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
             <div>
             <img src="{{ asset('images/application/'.application()->main_logo) }}" alt="Logo" id="logo">
+            </div>
+            <div class="ms-3">
+                <h4 class="mb-0 fw-bold" style="color: #9B59B6;">উদ্দীপ্ত মহিলা উন্নয়ন সংস্থা</h4>
+                <p class="mb-0 text-muted small">Uddipto Mohila Unnayan Sangstha</p>
             </div>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

@@ -69,7 +69,7 @@ section {
   display: block;
   width: 50px;
   height: 3px;
-  background: #ea2127;
+  background: #9B59B6;
   bottom: 0;
   left: calc(50% - 25px);
 }
@@ -152,7 +152,7 @@ section {
   min-height: 200px;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
   position: relative;
-  background: #f32249;
+  background: #9B59B6;
   border-radius: 15px;
 }
 
@@ -211,11 +211,11 @@ section {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #106eea;
+  border: 1px solid #9B59B6;
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #106eea;
+  background-color: #9B59B6;
 }
 
 

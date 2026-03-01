@@ -20,14 +20,14 @@ class ProgramController extends Controller
         $validatedData = $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => 'required|mimes:jpg,png,jpeg,gif',
+            'image' => 'nullable|mimes:jpg,png,jpeg,gif|max:2048',
             'status' => 'required|in:active,completed,upcoming',
         ]);
 
         $imageName = '';
         if ($image = $request->file('image')) {
             $imageName = rand(10000, 99999) . "program." . $image->getClientOriginalExtension();
-            $image->move(public_path('images/programs/'), $imageName);
+            $image->move(public_path('images/programs'), $imageName);
         }
 
         $data = array(
@@ -75,6 +75,7 @@ class ProgramController extends Controller
         $validatedData = $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'image' => 'nullable|mimes:jpg,png,jpeg,gif|max:2048',
             'status' => 'required|in:active,completed,upcoming',
         ]);
 
@@ -84,7 +85,7 @@ class ProgramController extends Controller
         $oldImageName = public_path('images/programs/' . $item->image);
 
         if ($image = $request->file('image')) {
-            if (file_exists($oldImageName)) {
+            if (file_exists($oldImageName) && !empty($item->image)) {
                 @unlink($oldImageName);
             }
             $imageName = rand(10000, 99999) . "program." . $image->getClientOriginalExtension();

@@ -21,8 +21,9 @@
                             @enderror
                         </div>
                         <div class="col-md-12">
-                            <label for="img" class="form-label">Image</label>
-                            <input type="file" name="image" class="form-control @error('image') is-invalid @enderror" id="img">
+                            <label for="img" class="form-label">Image (Optional)</label>
+                            <input type="file" name="image" class="form-control @error('image') is-invalid @enderror" id="img" accept="image/jpeg,image/png,image/jpg,image/gif">
+                            <small class="text-muted">Accepted formats: JPG, PNG, JPEG, GIF (Max: 2MB)</small>
                             @error('image')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror

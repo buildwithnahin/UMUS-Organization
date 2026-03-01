@@ -447,105 +447,36 @@ Uddipto Mohila Unnayan Sangstha
         </div>
 
         <div class="row g-4">
-            @if(isset($programs) && count($programs) > 0)
-                @foreach($programs as $program)
-                <div class="col-lg-4 col-md-6">
-                    <div class="program-card card border-0 shadow-sm h-100">
-                        <div class="program-image-wrapper">
-                            @if($program->image)
-                            <img src="{{ asset('images/programs/'.$program->image) }}" class="card-img-top program-image" alt="{{ $program->title }}">
-                            @else
-                            <img src="https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top program-image" alt="{{ $program->title }}">
-                            @endif
-                            @if($program->status)
-                            <span class="program-status badge bg-{{ $program->status == 'active' ? 'success' : ($program->status == 'completed' ? 'secondary' : 'info') }}">
-                                <i class="fa fa-circle-dot me-1"></i>{{ ucfirst($program->status) }}
-                            </span>
-                            @endif
-                            <div class="program-overlay">
-                                <a href="{{ route('programs.view', $program->id) }}" class="btn btn-light btn-sm">
-                                    <i class="fa fa-arrow-right me-1"></i>Learn More
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title fw-bold text-dark mb-3">{{ $program->title }}</h5>
-                            <p class="card-text text-secondary flex-grow-1">{{ Str::limit($program->description, 120) }}</p>
-                            <a href="{{ route('programs.view', $program->id) }}" class="text-success fw-semibold text-decoration-none mt-2">
-                                <i class="fa fa-arrow-right me-1"></i>Read More
+            @foreach($programs as $program)
+            <div class="col-lg-4 col-md-6">
+                <div class="program-card card border-0 shadow-sm h-100">
+                    <div class="program-image-wrapper">
+                        @if($program->image)
+                        <img src="{{ asset('images/programs/'.$program->image) }}" class="card-img-top program-image" alt="{{ $program->title }}">
+                        @else
+                        <img src="https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top program-image" alt="{{ $program->title }}">
+                        @endif
+                        @if($program->status)
+                        <span class="program-status badge bg-{{ $program->status == 'active' ? 'success' : ($program->status == 'completed' ? 'secondary' : 'info') }}">
+                            <i class="fa fa-circle-dot me-1"></i>{{ ucfirst($program->status) }}
+                        </span>
+                        @endif
+                        <div class="program-overlay">
+                            <a href="{{ route('programs.view', $program->id) }}" class="btn btn-light btn-sm">
+                                <i class="fa fa-arrow-right me-1"></i>Learn More
                             </a>
                         </div>
                     </div>
-                </div>
-                @endforeach
-            @else
-                <div class="col-lg-4 col-md-6">
-                    <div class="program-card card border-0 shadow-sm h-100">
-                        <div class="program-image-wrapper">
-                            <img src="https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top program-image" alt="Women's Empowerment">
-                            <span class="program-status badge bg-success">
-                                <i class="fa fa-circle-dot me-1"></i>Active
-                            </span>
-                            <div class="program-overlay">
-                                <a href="#" class="btn btn-light btn-sm">
-                                    <i class="fa fa-arrow-right me-1"></i>Learn More
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title fw-bold text-dark mb-3">Women's Empowerment Initiative</h5>
-                            <p class="card-text text-secondary flex-grow-1">Promoting gender equality and empowerment through education, skill-building, and advocacy for women's rights.</p>
-                            <a href="#" class="text-success fw-semibold text-decoration-none mt-2">
-                                <i class="fa fa-arrow-right me-1"></i>Read More
-                            </a>
-                        </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-dark mb-3">{{ $program->title }}</h5>
+                        <p class="card-text text-secondary flex-grow-1">{{ Str::limit($program->description, 120) }}</p>
+                        <a href="{{ route('programs.view', $program->id) }}" class="text-success fw-semibold text-decoration-none mt-2">
+                            <i class="fa fa-arrow-right me-1"></i>Read More
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="program-card card border-0 shadow-sm h-100">
-                        <div class="program-image-wrapper">
-                            <img src="https://images.pexels.com/photos/2659475/pexels-photo-2659475.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top program-image" alt="Youth Development">
-                            <span class="program-status badge bg-success">
-                                <i class="fa fa-circle-dot me-1"></i>Active
-                            </span>
-                            <div class="program-overlay">
-                                <a href="#" class="btn btn-light btn-sm">
-                                    <i class="fa fa-arrow-right me-1"></i>Learn More
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title fw-bold text-dark mb-3">Youth Development Project</h5>
-                            <p class="card-text text-secondary flex-grow-1">Empowering the next generation through mentorship, education, and community engagement to foster leadership.</p>
-                            <a href="#" class="text-success fw-semibold text-decoration-none mt-2">
-                                <i class="fa fa-arrow-right me-1"></i>Read More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="program-card card border-0 shadow-sm h-100">
-                        <div class="program-image-wrapper">
-                            <img src="https://images.pexels.com/photos/4388165/pexels-photo-4388165.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top program-image" alt="Healthcare Access">
-                            <span class="program-status badge bg-success">
-                                <i class="fa fa-circle-dot me-1"></i>Active
-                            </span>
-                            <div class="program-overlay">
-                                <a href="#" class="btn btn-light btn-sm">
-                                    <i class="fa fa-arrow-right me-1"></i>Learn More
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title fw-bold text-dark mb-3">Healthcare Access Program</h5>
-                            <p class="card-text text-secondary flex-grow-1">Providing essential healthcare services, awareness campaigns, and medical assistance to underserved communities.</p>
-                            <a href="#" class="text-success fw-semibold text-decoration-none mt-2">
-                                <i class="fa fa-arrow-right me-1"></i>Read More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            @endif
+            </div>
+            @endforeach
         </div>
 
         <div class="text-center mt-5">

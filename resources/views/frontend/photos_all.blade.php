@@ -2,6 +2,31 @@
 
 @section('content')
 
+<style>
+    .gallery-image-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 75%; /* 4:3 Aspect Ratio */
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .gallery-image-container img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    
+    .gallery-image-container:hover img {
+        transform: scale(1.05);
+    }
+</style>
+
   <!-- ======= Breadcrumbs ======= -->
   <section class="breadcrumbs">
     <div class="container">
@@ -26,7 +51,9 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 mb-5">
             @foreach ($photos as $key => $data)
                 <div class="col mt-3">
-                    <img src="{{ asset('images/gallery/'.$data->image) }}" class="img-fluid" alt="image">
+                    <div class="gallery-image-container">
+                        <img src="{{ asset('images/gallery/'.$data->image) }}" alt="image">
+                    </div>
                 </div>
             @endforeach
         </div>

@@ -38,10 +38,10 @@
             ];
             
             $statusLabels = [
-                'active' => ['text' => 'Active', 'class' => 'bg-success'],
-                'ongoing' => ['text' => 'Ongoing', 'class' => 'bg-primary'],
-                'planned' => ['text' => 'Planned', 'class' => 'bg-warning text-dark'],
-                'completed' => ['text' => 'Completed', 'class' => 'bg-secondary'],
+                'active' => ['text' => 'Active', 'class' => ''],
+                'ongoing' => ['text' => 'Ongoing', 'class' => ''],
+                'planned' => ['text' => 'Planned', 'class' => ''],
+                'completed' => ['text' => 'Completed', 'class' => ''],
             ];
         @endphp
 
@@ -72,7 +72,7 @@
                                     <i class="{{ $iconClass }} text-white"></i>
                                 @endif
                             </div>
-                            <span class="badge {{ $statusInfo['class'] }} rounded-pill px-3 py-2 shadow-sm">
+                            <span class="badge rounded-pill px-3 py-2 shadow-sm" style="background-color: #9B59B6; color: white;">
                                 <i class="fa-solid fa-circle-dot me-1" style="font-size: 0.6rem;"></i>
                                 {{ $statusInfo['text'] }}
                             </span>
@@ -139,26 +139,6 @@
                 </div>
             @endforelse
         </div>
-
-        <!-- Call to Action Section -->
-        @if(count($focus_areas ?? []) > 0)
-        <div class="text-center mt-5 pt-4" data-aos="fade-up">
-            <div class="cta-box bg-white rounded-4 shadow-lg p-5">
-                <h3 class="fw-bold mb-3">Want to Learn More About Our Work?</h3>
-                <p class="text-secondary mb-4 mx-auto" style="max-width: 600px;">
-                    Explore our programs, success stories, and see how you can make a difference in the lives of women and families in Satkhira.
-                </p>
-                <div class="d-flex gap-3 justify-content-center flex-wrap">
-                    <a href="{{ route('programs.all') }}" class="btn btn-lg btn-primary px-5 py-3 rounded-pill shadow-sm">
-                        <i class="fa-solid fa-rocket me-2"></i>View Our Programs
-                    </a>
-                    <a href="{{ route('volunteer.register') }}" class="btn btn-lg btn-outline-primary px-5 py-3 rounded-pill">
-                        <i class="fa-solid fa-hand-holding-heart me-2"></i>Get Involved
-                    </a>
-                </div>
-            </div>
-        </div>
-        @endif
     </div>
 </section>
 
@@ -318,11 +298,6 @@
 
 .empty-icon i {
     font-size: 3rem;
-}
-
-/* CTA Box */
-.cta-box {
-    background: white !important;
 }
 
 /* Responsive Design */

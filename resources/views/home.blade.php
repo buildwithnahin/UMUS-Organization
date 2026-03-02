@@ -253,9 +253,9 @@ Uddipto Mohila Unnayan Sangstha
         <!-- Section Header -->
         <div class="text-center mb-5">
             <div class="mb-3">
-                <i class="fa-solid fa-users text-success" style="font-size: 3rem;"></i>
+                <i class="fa-solid fa-users" style="font-size: 3rem; color: #9B59B6;"></i>
             </div>
-            <h2 class="fw-bold mb-3">Who <span class="text-success">We Are</span></h2>
+            <h2 class="fw-bold mb-3">Who <span style="color: #9B59B6;">We Are</span></h2>
             <p class="text-secondary fs-5 mb-0">Empowering marginalized communities in Satkhira since 2003</p>
         </div>
 
@@ -264,7 +264,7 @@ Uddipto Mohila Unnayan Sangstha
             <div class="col-lg-10 mx-auto">
                 <div class="about-content p-4 bg-light rounded">
                     <h5 class="fw-bold text-dark mb-3">
-                        <i class="fa-solid fa-quote-left text-success me-2"></i>
+                        <i class="fa-solid fa-quote-left me-2" style="color: #9B59B6;"></i>
                         Our Mission & Purpose
                     </h5>
                     <p class="text-secondary mb-3" style="line-height: 1.8; text-align: justify;">
@@ -273,7 +273,7 @@ Uddipto Mohila Unnayan Sangstha
                     <div class="row g-3 mt-3">
                         <div class="col-md-6">
                             <div class="d-flex align-items-start">
-                                <i class="fa-solid fa-check-circle text-success me-3 mt-1"></i>
+                                <i class="fa-solid fa-check-circle me-3 mt-1" style="color: #9B59B6;"></i>
                                 <div>
                                     <strong class="text-dark">Legal Rights Advocacy</strong>
                                     <p class="text-secondary mb-0 small">Promoting and protecting the rights of marginalized women and children</p>
@@ -282,7 +282,7 @@ Uddipto Mohila Unnayan Sangstha
                         </div>
                         <div class="col-md-6">
                             <div class="d-flex align-items-start">
-                                <i class="fa-solid fa-check-circle text-success me-3 mt-1"></i>
+                                <i class="fa-solid fa-check-circle me-3 mt-1" style="color: #9B59B6;"></i>
                                 <div>
                                     <strong class="text-dark">Essential Services</strong>
                                     <p class="text-secondary mb-0 small">Healthcare, legal aid, and education access for all</p>
@@ -291,7 +291,7 @@ Uddipto Mohila Unnayan Sangstha
                         </div>
                         <div class="col-md-6">
                             <div class="d-flex align-items-start">
-                                <i class="fa-solid fa-check-circle text-success me-3 mt-1"></i>
+                                <i class="fa-solid fa-check-circle me-3 mt-1" style="color: #9B59B6;"></i>
                                 <div>
                                     <strong class="text-dark">Leadership Development</strong>
                                     <p class="text-secondary mb-0 small">Building capacity and confidence in Dalit women and girls</p>
@@ -300,7 +300,7 @@ Uddipto Mohila Unnayan Sangstha
                         </div>
                         <div class="col-md-6">
                             <div class="d-flex align-items-start">
-                                <i class="fa-solid fa-check-circle text-success me-3 mt-1"></i>
+                                <i class="fa-solid fa-check-circle me-3 mt-1" style="color: #9B59B6;"></i>
                                 <div>
                                     <strong class="text-dark">Income Generation</strong>
                                     <p class="text-secondary mb-0 small">Skills training and economic empowerment programs</p>
@@ -318,11 +318,11 @@ Uddipto Mohila Unnayan Sangstha
                 <div class="action-card card border-0 shadow-sm h-100">
                     <div class="card-body text-center p-4">
                         <div class="action-icon mb-3">
-                            <i class="fa-solid fa-hands-holding-child text-success" style="font-size: 2.5rem;"></i>
+                            <i class="fa-solid fa-hands-holding-child" style="font-size: 2.5rem; color: #9B59B6;"></i>
                         </div>
                         <h5 class="fw-bold text-dark mb-2">Our Programs</h5>
                         <p class="text-secondary small mb-3">Explore our impactful community development initiatives</p>
-                        <a href="{{ route('programs.all') }}" class="btn btn-success w-100">
+                        <a href="{{ route('programs.all') }}" class="btn w-100" style="background-color: #9B59B6; color: white;">
                             <i class="fa-solid fa-arrow-right me-2"></i>View Programs
                         </a>
                     </div>
@@ -332,11 +332,11 @@ Uddipto Mohila Unnayan Sangstha
                 <div class="action-card card border-0 shadow-sm h-100">
                     <div class="card-body text-center p-4">
                         <div class="action-icon mb-3">
-                            <i class="fa-solid fa-circle-nodes text-primary" style="font-size: 2.5rem;"></i>
+                            <i class="fa-solid fa-circle-nodes" style="font-size: 2.5rem; color: #9B59B6;"></i>
                         </div>
                         <h5 class="fw-bold text-dark mb-2">Get Involved</h5>
                         <p class="text-secondary small mb-3">Join us in making a difference in Satkhira communities</p>
-                        <a href="{{ route('invoked.career') }}" class="btn btn-primary w-100">
+                        <a href="{{ route('invoked.career') }}" class="btn w-100" style="background-color: #9B59B6; color: white;">
                             <i class="fa-solid fa-arrow-right me-2"></i>Join Us
                         </a>
                     </div>
@@ -346,11 +346,11 @@ Uddipto Mohila Unnayan Sangstha
                 <div class="action-card card border-0 shadow-sm h-100">
                     <div class="card-body text-center p-4">
                         <div class="action-icon mb-3">
-                            <i class="fa-solid fa-phone-volume text-danger" style="font-size: 2.5rem;"></i>
+                            <i class="fa-solid fa-phone-volume" style="font-size: 2.5rem; color: #9B59B6;"></i>
                         </div>
                         <h5 class="fw-bold text-dark mb-2">Contact Us</h5>
                         <p class="text-secondary small mb-3">Reach out for partnerships and collaborations</p>
-                        <a href="{{ route('contact') }}" class="btn btn-danger w-100">
+                        <a href="{{ route('contact') }}" class="btn w-100" style="background-color: #9B59B6; color: white;">
                             <i class="fa-solid fa-arrow-right me-2"></i>Get in Touch
                         </a>
                     </div>
@@ -418,7 +418,7 @@ Uddipto Mohila Unnayan Sangstha
 }
 
 .about-content {
-    border-left: 4px solid #28a745;
+    border-left: 4px solid #9B59B6;
 }
 
 /* Responsive adjustments */
@@ -442,7 +442,7 @@ Uddipto Mohila Unnayan Sangstha
 <div class="bg-light py-5">
     <div class="container bg-white px-4 py-5">
         <div class="text-center mb-5">
-            <h2 class="fw-bold mb-3">Featured <span class="text-success">Programs</span></h2>
+            <h2 class="fw-bold mb-3">Featured <span style="color: #9B59B6;">Programs</span></h2>
             <p class="text-secondary fs-5">Transformative initiatives empowering communities in Satkhira district</p>
         </div>
 
@@ -457,7 +457,7 @@ Uddipto Mohila Unnayan Sangstha
                         <img src="https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top program-image" alt="{{ $program->title }}">
                         @endif
                         @if($program->status)
-                        <span class="program-status badge bg-{{ $program->status == 'active' ? 'success' : ($program->status == 'completed' ? 'secondary' : 'info') }}">
+                        <span class="program-status badge" style="background-color: #9B59B6;">
                             <i class="fa fa-circle-dot me-1"></i>{{ ucfirst($program->status) }}
                         </span>
                         @endif
@@ -470,7 +470,7 @@ Uddipto Mohila Unnayan Sangstha
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title fw-bold text-dark mb-3">{{ $program->title }}</h5>
                         <p class="card-text text-secondary flex-grow-1">{{ Str::limit($program->description, 120) }}</p>
-                        <a href="{{ route('programs.view', $program->id) }}" class="text-success fw-semibold text-decoration-none mt-2">
+                        <a href="{{ route('programs.view', $program->id) }}" class="fw-semibold text-decoration-none mt-2" style="color: #9B59B6;">
                             <i class="fa fa-arrow-right me-1"></i>Read More
                         </a>
                     </div>
@@ -1217,7 +1217,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="text-white-50 mb-4" style="line-height: 1.6;">
                         Your sponsorship drives sustainable change and empowers marginalized communities across Satkhira district.
                     </p>
-                    <a href="{{ route('donate') }}" class="btn btn-light btn-lg w-100">
+                    <a href="{{ route('donate') }}" class="btn btn-lg w-100" style="background-color: #ffd700; color: #333; font-weight: 600;">
                         <i class="fa-solid fa-handshake me-2"></i>Become a Sponsor
                     </a>
                     <small class="text-white-50 d-block mt-3">Custom opportunities available</small>
@@ -1228,15 +1228,15 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="col-lg-6 col-md-6">
                 <div class="get-involved-card h-100 text-center p-4">
                     <div class="get-involved-icon mb-4">
-                        <div class="icon-wrapper mx-auto" style="width: 100px; height: 100px; background: rgba(76, 175, 80, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                            <i class="fa-solid fa-user-plus" style="font-size: 3rem; color: #4caf50;"></i>
+                        <div class="icon-wrapper mx-auto" style="width: 100px; height: 100px; background: rgba(255, 215, 0, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fa-solid fa-user-plus" style="font-size: 3rem; color: #ffd700;"></i>
                         </div>
                     </div>
                     <h4 class="fw-bold text-white mb-3">Join Our Team</h4>
                     <p class="text-white-50 mb-4" style="line-height: 1.6;">
                         Make a difference through your time and skills. Help us create lasting impact in local communities.
                     </p>
-                    <a href="{{ route('volunteer.register') }}" class="btn btn-success btn-lg w-100">
+                    <a href="{{ route('volunteer.register') }}" class="btn btn-lg w-100" style="background-color: #ffd700; color: #333; font-weight: 600;">
                         <i class="fa-solid fa-user-plus me-2"></i>Register as Volunteer
                     </a>
                     <small class="text-white-50 d-block mt-3">

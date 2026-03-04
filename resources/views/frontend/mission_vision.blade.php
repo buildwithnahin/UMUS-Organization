@@ -9,7 +9,7 @@
         <li><a href="{{ url('/') }}">Home</a></li>
         <li>About us</li>
       </ol>
-      <h2>Mission, Vision & Values</h2>
+      <h2>Mission, Vision & Goals</h2>
     </div>
   </section>
   <!-- End Breadcrumbs -->
@@ -26,7 +26,7 @@
                     </div>
                     <h3 class="mvv-title mb-3">Our <strong class="mission-text">Mission</strong></h3>
                     <p class="mvv-description text-secondary">
-                        {{ $mission_vision->mission ?? 'To empower women and girls through education, skills training, and economic opportunities, fostering sustainable development in Satkhira district.' }}
+                        {!! nl2br(e($mission_vision->mission ?? 'To empower women and girls through education, skills training, and economic opportunities, fostering sustainable development in Satkhira district.')) !!}
                     </p>
                 </div>
             </div>
@@ -39,20 +39,20 @@
                     </div>
                     <h3 class="mvv-title mb-3">Our <strong class="vision-text">Vision</strong></h3>
                     <p class="mvv-description text-secondary">
-                        {{ $mission_vision->vision ?? 'A society where every woman has equal rights, opportunities, and the power to lead a life of dignity, free from discrimination and violence.' }}
+                        {!! nl2br(e($mission_vision->vision ?? 'A society where every woman has equal rights, opportunities, and the power to lead a life of dignity, free from discrimination and violence.')) !!}
                     </p>
                 </div>
             </div>
 
-            <!-- Values -->
+            <!-- Goals -->
             <div class="col-lg-4 col-md-6">
                 <div class="mvv-card text-center">
-                    <div class="mvv-icon-wrapper mx-auto mb-4 values-icon">
-                        <i class="fa-solid fa-heart-circle-check"></i>
+                    <div class="mvv-icon-wrapper mx-auto mb-4 goals-icon">
+                        <i class="fa-solid fa-bullseye"></i>
                     </div>
-                    <h3 class="mvv-title mb-3">Our <strong class="values-text">Values</strong></h3>
+                    <h3 class="mvv-title mb-3">Our <strong class="goals-text">Goals</strong></h3>
                     <p class="mvv-description text-secondary">
-                        {{ $mission_vision->values ?? 'Integrity, Inclusivity, Empowerment, Community Engagement, Sustainability, and Transparency in all our actions and programs.' }}
+                        {!! nl2br(e($mission_vision->goals ?? 'Integrity, Inclusivity, Empowerment, Community Engagement, Sustainability, and Transparency in all our actions and programs.')) !!}
                     </p>
                 </div>
             </div>
@@ -114,13 +114,13 @@
         color: #4ecdc4;
     }
 
-    /* Values - Gold/Orange */
-    .values-icon {
+    /* Goals - Gold/Orange */
+    .goals-icon {
         background: linear-gradient(135deg, #ffd700 0%, #ffb347 100%);
         box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
     }
 
-    .values-text {
+    .goals-text {
         background: linear-gradient(135deg, #ffd700 0%, #ffb347 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -141,7 +141,7 @@
         box-shadow: 0 15px 35px rgba(78, 205, 196, 0.6);
     }
 
-    .mvv-card:hover .values-icon {
+    .mvv-card:hover .goals-icon {
         box-shadow: 0 15px 35px rgba(255, 215, 0, 0.6);
     }
 

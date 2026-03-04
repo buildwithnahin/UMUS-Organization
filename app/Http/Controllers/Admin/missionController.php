@@ -19,16 +19,16 @@ class missionController extends Controller
         $validatedData = $request->validate([
             'vision' => 'required',
             'mission' => 'required',
-            'values' => 'required',
+            'goals' => 'required',
         ]);
 
         $matchThese = ['id' => 1];
         DB::table('mission_vision')->updateOrInsert($matchThese, [
             'vision' => $request->vision,
             'mission' => $request->mission,
-            'values' => $request->values,
+            'goals' => $request->goals,
         ]);
         
-        return redirect()->back()->with('success','Successfully saved Mission, Vision and Values');
+        return redirect()->back()->with('success','Successfully saved Mission, Vision and Goals');
     }
 }

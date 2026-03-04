@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
     <div class="col-xl-9 mx-auto">
-        <h6 class="mb-0 text-uppercase">Add Mission and Vision </h6>
+        <h6 class="mb-0 text-uppercase">Add Mission, Vision and Goals </h6>
         <hr/>
         <div class="card">
             <div class="card-body">
@@ -30,9 +30,9 @@
                             @enderror
                         </div>
                         <div class="col-md-12">
-                            <label for="values" class="form-label">Our Values</label>
-                            <textarea id="values" name="values" class="form-control @error('values') is-invalid @enderror" rows="5">{{ old('values', $mission->values ?? '') }}</textarea>
-                            @error('values')
+                            <label for="goals" class="form-label">Our Goals</label>
+                            <textarea id="goals" name="goals" class="form-control @error('goals') is-invalid @enderror" rows="5">{{ old('goals', $mission->goals ?? '') }}</textarea>
+                            @error('goals')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -50,19 +50,19 @@
                     <div class="col-md-12">
                         <h6>Vision:</h6>
                         <p class="text-justify">
-                            {{ isset($mission->vision)? $mission->vision:'' }}
+                            {!! nl2br(e(isset($mission->vision)? $mission->vision:'')) !!}
                         </p>
                     </div>
                     <div class="col-md-12">
                         <h6>Mission:</h6>
                         <p class="text-justify">
-                            {{ isset($mission->mission)? $mission->mission:'' }}
+                            {!! nl2br(e(isset($mission->mission)? $mission->mission:'')) !!}
                         </p>
                     </div>
                     <div class="col-md-12">
-                        <h6>Our Values:</h6>
+                        <h6>Our Goals:</h6>
                         <p class="text-justify">
-                            {{ isset($mission->values)? $mission->values:'' }}
+                            {!! nl2br(e(isset($mission->goals)? $mission->goals:'')) !!}
                         </p>
                     </div>
                 </div>

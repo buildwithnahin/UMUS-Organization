@@ -19,7 +19,7 @@ class policyController extends Controller
     {
         $validatedDate = $request->validate([
             'name' => 'required',
-            'file' => 'required|mimes:pdf',
+            'file' => 'required|mimes:jpeg,png,jpg,gif,svg,webp,avif,jfif|max:102400',
         ]);
 
         $fileName = '';

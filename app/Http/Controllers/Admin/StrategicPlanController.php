@@ -18,8 +18,8 @@ class StrategicPlanController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image' => 'required|mimes:jpg,jpeg,png,gif,webp|max:2048',
-            'pdf_file' => 'required|mimes:pdf|max:10240',
+            'image' => 'required|mimes:jpeg,png,jpg,gif,svg,webp,avif,jfif|max:102400',
+            'pdf_file' => 'required|mimes:pdf|max:102400',
         ]);
 
         $imageName = '';
@@ -65,8 +65,8 @@ class StrategicPlanController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image' => (empty($strategicPlan->image) ? 'required' : 'nullable') . '|mimes:jpg,jpeg,png,gif,webp|max:2048',
-            'pdf_file' => (empty($strategicPlan->pdf_file) ? 'required' : 'nullable') . '|mimes:pdf|max:10240',
+            'image' => (empty($strategicPlan->image) ? 'required' : 'nullable') . '|mimes:jpeg,png,jpg,gif,svg,webp,avif,jfif|max:102400',
+            'pdf_file' => (empty($strategicPlan->pdf_file) ? 'required' : 'nullable') . '|mimes:pdf|max:102400',
         ]);
 
         $imageName = $strategicPlan->image;

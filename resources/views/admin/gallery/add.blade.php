@@ -16,7 +16,6 @@
                         <div class="col-md-12">
                             <label for="title" class="form-label">Title</label>
                             <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" id="title" value="" placeholder="Enter Slider Top Title">
-                            <span class="text-info">Image Dimension Must be (725 X 375) and maximum size 300 kb.</span>
                             @error('title')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
@@ -24,6 +23,7 @@
                         <div class="col-md-12">
                             <label for="img" class="form-label">Image</label>
                             <input type="file" name="image" class="form-control @error('image') is-invalid @enderror" id="img">
+                            <span class="text-info">Image Dimension Must be (725 X 375) and maximum size 100 MB.</span>
                             @error('image')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror

@@ -20,7 +20,7 @@ class ExecutiveCommitteeController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
             'designation' => 'required',
-            'photo' => 'required|mimes:jpg,png,jpeg,gif',
+            'photo' => 'required|mimes:jpeg,png,jpg,gif,svg,webp,avif,jfif|max:102400',
             'order' => 'nullable|integer',
         ]);
 

@@ -6,7 +6,7 @@ Uddipto Mohila Unnayan Sangstha
 
 @section('content')
 {{-- slider --}}
-<div id="carouselExampleIndicators" class="carousel slide hero-slider" data-bs-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide hero-slider" data-bs-ride="carousel" data-bs-wrap="true" data-bs-pause="hover">
     <div class="carousel-inner">
         @foreach ($slider as $skey => $slide)
         <div class="carousel-item @if($skey == 0) active @endif">
@@ -453,8 +453,6 @@ Uddipto Mohila Unnayan Sangstha
                     <div class="program-image-wrapper">
                         @if($program->image)
                         <img src="{{ asset('images/programs/'.$program->image) }}" class="card-img-top program-image" alt="{{ $program->title }}">
-                        @else
-                        <img src="https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top program-image" alt="{{ $program->title }}">
                         @endif
                         @if($program->status)
                         <span class="program-status badge" style="background-color: #9B59B6;">
@@ -947,25 +945,35 @@ Uddipto Mohila Unnayan Sangstha
 document.addEventListener('DOMContentLoaded', function() {
     const counters = document.querySelectorAll('.impact-number');
     const speed = 200; // Animation speed
-    
+
     const animateCounter = (counter) => {
-        const target = parseInt(counter.getAttribute('data-target'));
-        const increment = target / speed;
+        const raw = counter.getAttribute('data-target');           // e.g. "5,000+" or "500" or "20+"
+        const numberStr = raw.replace(/,/g, '');                   // remove commas → "5000+"
+        const numeric = parseInt(numberStr);                       // → 5000 (parseInt stops at "+")
+        if (isNaN(numeric) || numeric === 0) {
+            counter.innerText = raw;                               // non-numeric: just show as-is
+            return;
+        }
+        // Detect suffix: anything after the last digit (e.g. "+", "K", "")
+        const suffix = raw.replace(/^[\d,]+/, '');                 // strip leading digits & commas
+
+        const increment = numeric / speed;
         let count = 0;
-        
+
         const updateCount = () => {
             count += increment;
-            if (count < target) {
+            if (count < numeric) {
                 counter.innerText = Math.ceil(count).toLocaleString();
                 setTimeout(updateCount, 10);
             } else {
-                counter.innerText = target.toLocaleString();
+                // Final value: formatted number + original suffix
+                counter.innerText = numeric.toLocaleString() + suffix;
             }
         };
-        
+
         updateCount();
     };
-    
+
     // Intersection Observer to trigger animation when in viewport
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -976,7 +984,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, { threshold: 0.5 });
-    
+
     counters.forEach(counter => {
         observer.observe(counter);
     });
@@ -1349,5 +1357,13 @@ document.addEventListener('DOMContentLoaded', function() {
 @endsection
 
 @push('js')
-
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var myCarousel = document.getElementById('carouselExampleIndicators')
+        var carousel = new bootstrap.Carousel(myCarousel, {
+            interval: 4000,
+            wrap: true
+        })
+    });
+</script>
 @endpush

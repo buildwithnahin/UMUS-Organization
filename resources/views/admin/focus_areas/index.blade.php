@@ -32,7 +32,7 @@
                         <tbody>
                             @forelse ($focus_areas as $item)
                                 <tr>
-                                    <td>{{ $item->id }}</td>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>
                                         <div class="fw-bold">{{ $item->title }}</div>
                                         <div class="text-muted" style="max-width: 650px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">

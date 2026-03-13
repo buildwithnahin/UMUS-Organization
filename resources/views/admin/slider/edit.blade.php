@@ -25,7 +25,7 @@
                         <div class="col-md-12">
                             <label for="img" class="form-label">Image</label>
                             <input type="file" name="image" class="form-control" id="img">
-                            <span class="text-info">Image Dimension Must be (1920 X 700) and Size Maximum 500 kb</span>
+                            <span class="text-info">Image Dimension Must be (1920 X 700) and Size Maximum 100 MB</span>
                         </div>
                         <div class="col-md-12">
                             <label for="img" class="form-label">Old Image:</label>

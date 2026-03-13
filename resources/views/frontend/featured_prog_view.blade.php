@@ -22,8 +22,6 @@
             <div class="col text-start">
                 @if($program->image)
                     <img src="{{ asset('images/programs/'.$program->image) }}" alt="{{ $program->title }}" class="w-100 rounded shadow-sm mb-4" style="max-width: 600px;">
-                @else
-                    <img src="https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="{{ $program->title }}" class="w-100 rounded shadow-sm mb-4" style="max-width: 600px;">
                 @endif
                 
                 <div class="mb-3">

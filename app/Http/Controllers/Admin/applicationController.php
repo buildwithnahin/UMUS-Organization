@@ -21,7 +21,7 @@ class applicationController extends Controller
         if($main_logo = $request->file('main_logo'))
         {
             $request->validate([
-                'image' => ['mimes:jpeg,png,jpg', 'max:500'],
+                'image' => ['mimes:jpeg,png,jpg,gif,svg,webp,avif,jfif', 'max:102400'],
             ]);
 
             if(!empty($application) && file_exists(public_path('images/application/' . $application->main_logo)))
@@ -50,7 +50,7 @@ class applicationController extends Controller
         if($fev_icon = $request->file('fev_icon'))
         {
             $request->validate([
-                'image' => ['mimes:jpeg,png,jpg', 'max:500'],
+                'image' => ['mimes:jpeg,png,jpg,gif,svg,webp,avif,jfif', 'max:102400'],
             ]);
 
             if(!empty($application) && file_exists(public_path('images/application/' . $application->fav_icon)))
@@ -92,8 +92,8 @@ class applicationController extends Controller
 
     // public function store(Request $request ){
     //     $validatedData = $request->validate([
-    //         'logo' => 'required|mimes:jpg,png,jpeg,gif',
-    //         'fav' => 'required|mimes:jpg,png,jpeg,gif',
+    //         'logo' => 'required|mimes:jpeg,png,jpg,gif,svg,webp,avif,jfif',
+    //         'fav' => 'required|mimes:jpeg,png,jpg,gif,svg,webp,avif,jfif',
     //         'fb' => 'required',
     //         'twitter' => 'required',
     //         'insta' => 'required',

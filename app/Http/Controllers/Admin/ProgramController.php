@@ -20,7 +20,7 @@ class ProgramController extends Controller
         $validatedData = $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => 'nullable|mimes:jpg,png,jpeg,gif|max:2048',
+            'image' => 'nullable|mimes:jpeg,png,jpg,gif,svg,webp,avif,jfif|max:102400',
             'status' => 'required|in:active,completed,upcoming',
         ]);
 
@@ -75,7 +75,7 @@ class ProgramController extends Controller
         $validatedData = $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => 'nullable|mimes:jpg,png,jpeg,gif|max:2048',
+            'image' => 'nullable|mimes:jpeg,png,jpg,gif,svg,webp,avif,jfif|max:102400',
             'status' => 'required|in:active,completed,upcoming',
         ]);
 

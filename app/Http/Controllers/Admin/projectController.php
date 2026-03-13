@@ -18,7 +18,7 @@ class projectController extends Controller
         $validated = $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => 'required|mimes:jpeg,png,jpg',
+            'image' => 'required|mimes:jpeg,png,jpg,gif,svg,webp,avif,jfif|max:102400',
         ]);
 
         $imageName = '';

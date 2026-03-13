@@ -32,7 +32,7 @@
                         <div class="col-md-12">
                             <label for="image" class="form-label">Image<span class="text-danger">*</span></label>
                             <input type="file" name="image" id="image" class="form-control @error('image') is-invalid @enderror">
-                            <span class="text-info">Image maximum size 2 MB. Supported formats: JPG, PNG, JPEG, GIF, WEBP</span>
+                            <span class="text-info">Image maximum size 100 MB. Supported formats: JPG, PNG, JPEG, GIF, WEBP</span>
                             @error('image')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
@@ -40,7 +40,7 @@
                         <div class="col-md-12">
                             <label for="pdf_file" class="form-label">Upload PDF<span class="text-danger">*</span></label>
                             <input type="file" name="pdf_file" id="pdf_file" class="form-control @error('pdf_file') is-invalid @enderror">
-                            <span class="text-info">PDF file maximum size 10 MB</span>
+                            <span class="text-info">PDF file maximum size 100 MB</span>
                             @error('pdf_file')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror

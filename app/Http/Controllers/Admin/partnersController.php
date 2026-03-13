@@ -17,7 +17,7 @@ class partnersController extends Controller
     public function store(Request $request){
         $validatedData = $request->validate([
             'name' => 'required',
-            'image' => 'required|mimes:jpg,png,gif,jpeg',
+            'image' => 'required|mimes:jpeg,png,jpg,gif,svg,webp,avif,jfif|max:102400',
         ]);
 
         $partnerImg = '';

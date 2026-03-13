@@ -20,7 +20,7 @@ class StoryController extends Controller
         $validatedData = $request->validate([
             'rating' => 'required|integer|min:1|max:5',
             'description' => 'required',
-            'image' => 'required|mimes:jpg,png,jpeg,gif',
+            'image' => 'required|mimes:jpeg,png,jpg,gif,svg,webp,avif,jfif|max:102400',
             'beneficiary_name' => 'required',
             'beneficiary_title' => 'required',
         ]);

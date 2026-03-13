@@ -1,122 +1,135 @@
 /* ========================================
    UMUS Admin Panel Theme Colors
-   Primary: Purple (#9B59B6)
+   Matches Frontend Identity:
+   Primary: Blue/Purple, Secondary: Gold, Accent: Green
+   Based on umusfrontend styles.
    ======================================== */
-
+:root {
+    --primary-color: #9B59B6;
+    --primary-dark: #6C3483;
+    --primary-light: #D4A4F4;
+    --secondary-color: #F39C12;
+    --secondary-dark: #D68910;
+    --secondary-light: #FDB949;
+    --accent-color: #27AE60;
+    --accent-dark: #229954;
+    --accent-light: #58D68D;
+}
 /* Sidebar Logo Text */
 .logo-text.text-success {
-    color: #9B59B6 !important;
+    color: var(--primary-color) !important;
 }
-
 /* Toggle Icon */
 .toggle-icon .bx.text-success {
-    color: #9B59B6 !important;
+    color: var(--primary-color) !important;
 }
-
-/* Sidebar Menu Active */
-.metismenu li.mm-active > a {
-    background-color: #F5F3F7;
-    color: #9B59B6 !important;
-    border-left: 3px solid #9B59B6;
+/* Base Topbar Customization */
+.topbar {
+    background-color: var(--primary-color) !important;
 }
-
-/* Sidebar Menu Hover */
-.metismenu a:hover {
-    background-color: #FEF5E7;
-    color: #9B59B6;
-}
-
-/* Primary Button in Admin */
-.btn-primary {
-    background-color: #9B59B6 !important;
-    border-color: #9B59B6 !important;
-}
-
-.btn-primary:hover {
-    background-color: #6C3483 !important;
-    border-color: #6C3483 !important;
-}
-
-/* Success Elements */
-.text-success, .badge-success, .bg-success {
-    background-color: #27AE60 !important;
+.topbar .nav-link, .topbar .user-name {
     color: #fff !important;
 }
-
+.topbar .mobile-toggle-menu {
+    color: #fff !important;
+}
+/* Base Sidebar Customization */
+.sidebar-wrapper {
+    background-color: #F5F3F7;
+    border-right: 1px solid var(--primary-light);
+}
+.sidebar-wrapper .sidebar-header {
+    background-color: #F5F3F7;
+    border-bottom: 1px solid var(--primary-light);
+}
+/* Sidebar Menu Font Colors */
+.sidebar-wrapper .metismenu a {
+    color: var(--primary-dark) !important;
+}
+/* Sidebar Menu Active */
+.sidebar-wrapper .metismenu .mm-active>a, 
+.sidebar-wrapper .metismenu li.mm-active > a {
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+    border-left: 4px solid var(--secondary-color);
+}
+.sidebar-wrapper .metismenu .mm-active>a i, 
+.sidebar-wrapper .metismenu li.mm-active > a i {
+    color: #fff !important;
+}
+/* Sidebar Menu Hover */
+.sidebar-wrapper .metismenu a:hover {
+    background-color: var(--primary-light) !important;
+    color: var(--primary-dark) !important;
+}
+/* Primary Button in Admin */
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+.btn-primary:hover, .btn-primary:focus {
+    background-color: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+    box-shadow: 0 0 0 0.2rem rgba(155, 89, 182, 0.5) !important;
+}
+/* Success Elements */
+.text-success { color: var(--accent-color) !important; }
+.badge-success, .bg-success, .btn-success { background-color: var(--accent-color) !important; border-color: var(--accent-color) !important; color: #fff !important;}
+.btn-success:hover { background-color: var(--accent-dark) !important;}
 /* Info/Warning Elements */
-.text-warning, .badge-warning {
-    color: #F39C12 !important;
-}
-
-.bg-warning {
-    background-color: #F39C12 !important;
-}
-
-/* Danger Elements - Use Purple */
-.text-danger, .badge-danger {
-    color: #9B59B6 !important;
-}
-
-.bg-danger {
-    background-color: #9B59B6 !important;
-}
-
+.text-warning { color: var(--secondary-color) !important; }
+.badge-warning, .bg-warning, .btn-warning { background-color: var(--secondary-color) !important; border-color: var(--secondary-color) !important; color: #fff !important;}
+.btn-warning:hover { background-color: var(--secondary-dark) !important;}
+/* Danger Elements */
+.text-danger { color: #dc3545 !important; }
+.badge-danger, .bg-danger, .btn-danger { background-color: #dc3545 !important; }
 /* Links */
 a {
-    color: #9B59B6;
+    color: var(--primary-color);
 }
-
 a:hover {
-    color: #6C3483;
+    color: var(--secondary-color);
 }
-
 /* Card Headers */
 .card-header {
     background-color: #F5F3F7;
-    border-bottom: 2px solid #9B59B6;
+    border-bottom: 2px solid var(--primary-color);
 }
-
 /* Table Striped */
 .table-striped > tbody > tr:nth-of-type(odd) {
     background-color: #FEF5E7;
 }
-
 /* Focus State */
 .form-control:focus, .form-select:focus {
-    border-color: #9B59B6;
+    border-color: var(--primary-color);
     box-shadow: 0 0 0 0.2rem rgba(155, 89, 182, 0.25);
 }
-
 /* Pagination */
-.pagination .page-item.active .page-link {
-    background-color: #9B59B6;
-    border-color: #9B59B6;
+.page-item.active .page-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
 }
-
-.pagination .page-link {
-    color: #9B59B6;
+.page-link {
+    color: var(--primary-color);
 }
-
-.pagination .page-link:hover {
-    color: #6C3483;
-    background-color: #F5F3F7;
+.page-link:hover {
+    color: var(--primary-dark);
+    background-color: var(--primary-light);
 }
-
-/* Widgets/Cards */
+/* Widgets/Cards Icons */
 .widget-icon {
-    background-color: #9B59B6;
+    background-color: var(--primary-color);
+    color: #fff;
 }
-
 /* Progress Bars */
 .progress-bar {
-    background-color: #9B59B6;
+    background-color: var(--primary-color);
 }
-
-/* Badges */
-.badge-primary {
-    background-color: #9B59B6 !important;
+/* Overriding any bootstrap active menus just in case */
+.dropdown-item.active, .dropdown-item:active {
+    background-color: var(--primary-color) !important;
 }
-
-.badge-info {
-    background-color: #3498DB !important;
+/* Quick fixes for text-success uses in admin home widgets */
+.card .text-success {
+    color: var(--primary-color) !important; /* Make the widget numbers use brand primary */
 }

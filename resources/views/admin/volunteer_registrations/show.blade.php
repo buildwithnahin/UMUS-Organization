@@ -94,7 +94,7 @@
                         <h6 class="text-primary"><i class="bx bx-message-dots"></i> Why Volunteer?</h6>
                         <div class="card bg-light">
                             <div class="card-body">
-                                <p class="mb-0" style="white-space: pre-wrap;">{{ $data->why_volunteer }}</p>
+                                <p class="mb-0" style="white-space: pre-wrap;">{!! nl2br(e($data->why_volunteer)) !!}</p>
                             </div>
                         </div>
                     </div>
@@ -131,3 +131,4 @@
     </div>
 </div>
 @endsection
+

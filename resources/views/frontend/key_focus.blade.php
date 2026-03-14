@@ -87,7 +87,7 @@
                         <h4 class="focus-title mb-3">{{ $item->title }}</h4>
                         
                         <!-- Description -->
-                        <p class="focus-description text-secondary mb-4">{{ $item->description }}</p>
+                        <p class="focus-description text-secondary mb-4">{!! nl2br(e($item->description)) !!}</p>
 
                         <!-- Bottom Section with Context -->
                         <div class="focus-footer mt-auto pt-3 border-top">
@@ -349,3 +349,4 @@
 </style>
 
 @endsection
+

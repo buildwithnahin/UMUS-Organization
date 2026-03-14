@@ -6,8 +6,8 @@
             <img src="{{ asset('images/application/'.application()->main_logo) }}" alt="Logo" id="logo">
             </div>
             <div class="ms-3">
-                <h4 class="mb-0 fw-bold" style="color: #9B59B6;">উদ্দীপ্ত মহিলা উন্নয়ন সংস্থা</h4>
-                <p class="mb-0 text-muted small">Uddipto Mohila Unnayan Sangstha</p>
+                <h4 class="mb-0 fw-bold" style="color: #9B59B6;">UDDIPTO MOHILA UNNAYAN SANGSTHA (UMUS)</h4>
+                <p class="mb-0 text-muted" style="font-size: 0.85rem;">Non-Government, Woman and Dalits Community Empowerment Organization.</p>
             </div>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,8 +64,6 @@
                 <ul class="dropdown-menu" aria-labelledby="involvedDropdown">
                     <li><a class="dropdown-item" href="{{ route('volunterr.opportunities') }}">Volunteer Opportunities</a></li>
                     <li><a class="dropdown-item" href="{{ route('donate') }}">Donate</a></li>
-                    <li><a class="dropdown-item" href="{{ route('fundraising') }}">Fundraising Campaign</a></li>
-                    <li><a class="dropdown-item" href="{{ route('corporate.partnership') }}">Corporate Partnership</a></li>
                     <li><a class="dropdown-item" href="{{ route('invoked.career') }}">Career with UMUS</a></li>
                 </ul>
                 </li>
@@ -77,8 +75,6 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
                     <li><a class="dropdown-item" href="{{ route('latest.news.all') }}">News & Events</a></li>
-                    <li><a class="dropdown-item" href="{{ route('events.calender') }}">Events Calender</a></li>
-                    <li><a class="dropdown-item" href="{{ route('youtube.video') }}">Youtube Video</a></li>
                     <li><a class="dropdown-item" href="{{ route('strategic.plan') }}">UMUS Strategic Plan</a></li>
                     <li><a class="dropdown-item" href="{{ route('policy.guideline') }}">Policy & Guideline</a></li>
                     <li><a class="dropdown-item" href="{{ route('publication') }}">Publication</a></li>
@@ -124,3 +120,4 @@
         }
     });
 </script>
+

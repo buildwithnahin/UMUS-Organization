@@ -38,7 +38,7 @@
                     <div class="col-md-12">
                         <h6>Description:</h6>
                         <p class="text-justify">
-                            {!! isset($about->description)?"$about->description":'' !!}
+                            {!! nl2br(e($about->description ?? '')) !!}
                         </p>
                     </div>
                 </div>
@@ -49,3 +49,4 @@
 </div>
 
 @endsection
+

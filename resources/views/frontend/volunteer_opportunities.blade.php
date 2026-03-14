@@ -30,11 +30,11 @@
                             @if($volunteer->location)
                             <p class="text-muted mb-2"><i class="bx bx-map"></i> {{ $volunteer->location }}</p>
                             @endif
-                            <p class="card-text">{{ $volunteer->description }}</p>
+                            <p class="card-text">{!! nl2br(e($volunteer->description)) !!}</p>
                             @if($volunteer->requirements)
                             <div class="mt-3">
                                 <h6 class="text-primary">Requirements:</h6>
-                                <p class="small">{{ $volunteer->requirements }}</p>
+                                <p class="small">{!! nl2br(e($volunteer->requirements)) !!}</p>
                             </div>
                             @endif
                             @if($volunteer->status == 'open')
@@ -58,3 +58,4 @@
   <!-- End Volunteer Opportunities Section -->
 
 @endsection
+

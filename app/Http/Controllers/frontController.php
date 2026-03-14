@@ -151,11 +151,6 @@ class frontController extends Controller
         return view('frontend.news_all',compact('news'));
     }
 
-    // Youtube
-    public function youtube(){
-        return view('frontend.youtube');
-    }
-
     // Programs
     public function programs(){
         $programs = DB::table('programs')->orderBy('id', 'desc')->get();
@@ -186,10 +181,6 @@ class frontController extends Controller
         return view('frontend.news_view',compact('news'));
     }
 
-    // Events Calender
-    public function calender(){
-        return view('frontend.calender');
-    }
 
     // Strategic Plan
     public function strategic_plan(){
@@ -278,16 +269,6 @@ class frontController extends Controller
         ]);
 
         return redirect()->back()->with('success', 'Thank you for your donation! We will verify it soon.');
-    }
-
-    // Fundraising
-    public function fundraising(){
-        return view('frontend.fundraising');
-    }
-
-    // Corporate Partnership
-    public function corporate(){
-        return view('frontend.corporate_partner');
     }
 
     // Get Contact

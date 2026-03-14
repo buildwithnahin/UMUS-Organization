@@ -20,8 +20,10 @@ Route::get('/', function () {
     $programs = DB::table('programs')->orderBy('created_at', 'desc')->take(6)->get();
     $stories = DB::table('stories')->orderBy('id', 'desc')->get();
     $impact = DB::table('impact')->orderBy('order')->take(4)->get();
+    $about_us = DB::table('about_us')->first();
+    $mission_vision = DB::table('mission_vision')->first();
 
-    return view('home', compact('slider', 'project', 'news', 'gallery', 'application', 'programs', 'stories', 'impact'));
+    return view('home', compact('slider', 'project', 'news', 'gallery', 'application', 'programs', 'stories', 'impact', 'about_us', 'mission_vision'));
 });
 
 // Route::post('user/subscribe', [frontController::class, 'subscribe'])->name('user.subscribe');
@@ -43,12 +45,10 @@ Route::get('ongoing/project', [frontController::class, 'ongoing_project'])->name
 Route::get('ongoing/project/view/{id}', [frontController::class, 'project_view'])->name('ongoing.project.view');
 Route::get('latest/news/view/{id}', [frontController::class, 'news_view'])->name('latest.news.view');
 Route::get('latest/news/all', [frontController::class, 'news_all'])->name('latest.news.all');
-Route::get('youtube/video', [frontController::class, 'youtube'])->name('youtube.video');
 Route::get('programs', [frontController::class, 'programs'])->name('programs.all');
 Route::get('programs/view/{id}', [frontController::class, 'programsView'])->name('programs.view');
 Route::get('success/stories', [frontController::class, 'stories'])->name('success.stories');
 Route::get('success/stories/view/{id}', [frontController::class, 'storiesView'])->name('success.stories.view');
-Route::get('events/calender', [frontController::class, 'calender'])->name('events.calender');
 
 // Stay Informed
 Route::get('strategic/plan', [frontController::class, 'strategic_plan'])->name('strategic.plan');
@@ -62,8 +62,6 @@ Route::get('volunteer/register', [frontController::class, 'volunteerRegister'])-
 Route::post('volunteer/register/submit', [frontController::class, 'volunteerRegisterSubmit'])->name('volunteer.register.submit');
 Route::get('donate', [frontController::class, 'donate'])->name('donate');
 Route::post('donation/submit', [frontController::class, 'donationSubmit'])->name('donation.submit');
-Route::get('fundraising', [frontController::class, 'fundraising'])->name('fundraising');
-Route::get('corporate/partnership', [frontController::class, 'corporate'])->name('corporate.partnership');
 Route::get('contact', [frontController::class, 'contact'])->name('contact');
 Route::post('message/store', [frontController::class, 'messageStore'])->name('message.store');
 

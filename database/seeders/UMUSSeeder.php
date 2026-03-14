@@ -296,58 +296,6 @@ The program empowers community members to claim their rights and access justice.
             ],
         ]);
 
-        // Success Stories
-        DB::table('stories')->insert([
-            [
-                'rating' => 5,
-                'description' => 'From Discrimination to Empowerment: Rina\'s Journey
-
-Rina Das (name changed), a young Dalit woman from Assasuni, faced severe discrimination in accessing healthcare services. Through UMUS\'s SUChWONA project, she received training on health rights and was connected with local health facilities. Today, Rina not only accesses healthcare without discrimination but has also become a community health advocate, helping other women understand their rights. She has organized 15 awareness sessions in her village, reaching over 200 women. Her transformation from a marginalized individual to a community leader exemplifies the impact of rights-based empowerment.',
-                'image' => 'story-rina.jpg',
-                'beneficiary_name' => 'Rina Das',
-                'beneficiary_title' => 'Community Health Advocate',
-                'date' => '2024-11-15',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'rating' => 5,
-                'description' => 'Breaking Barriers: Maya\'s Educational Success
-
-Maya Rani (name changed), 14, was on the verge of dropping out of school due to poverty and social pressure. Her family, from a Dalit community in Tala, couldn\'t afford educational expenses. UMUS\'s education support program provided her with school supplies, tuition support, and mentoring. Maya not only continued her education but also excelled academically, securing top position in her class. She recently passed her SSC examination with distinction. Maya now dreams of becoming a teacher to help other children from her community. Her story shows how timely support can change lives and break intergenerational cycles of poverty.',
-                'image' => 'story-maya.jpg',
-                'beneficiary_name' => 'Maya Rani',
-                'beneficiary_title' => 'SSC Top Score Student',
-                'date' => '2025-03-20',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'rating' => 5,
-                'description' => 'Economic Independence: Shefali\'s Small Business
-
-Shefali Sarkar (name changed), a widow with three children, struggled to make ends meet through irregular daily labor. Through UMUS\'s livelihood program, she received training in tailoring and a small grant to start her business. With dedication and the skills learned, Shefali now runs a successful tailoring shop in her village. She earns a stable income, has sent her children to school, and employs two other women from her community. Shefali\'s business has grown to the point where she has started saving money and planning for her children\'s higher education. Her success has inspired five other women in her village to start their own small businesses.',
-                'image' => 'story-shefali.jpg',
-                'beneficiary_name' => 'Shefali Sarkar',
-                'beneficiary_title' => 'Entrepreneur & Tailor',
-                'date' => '2025-08-10',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'rating' => 5,
-                'description' => 'Sports Champion: Priya\'s Football Journey
-
-Priya (name changed), 16, never imagined she could play football. Growing up in a conservative family in Assasuni, she faced restrictions on outdoor activities. When UMUS organized an inter-school football program, Priya\'s school teacher encouraged her to participate. Initially hesitant, Priya joined and discovered her passion for the sport. Through regular practice and coaching provided by UMUS, she became captain of her school team. The confidence she gained through sports has transformed her personality. She now speaks confidently in public, has taken leadership roles in her school, and advocates for girls\' rights in sports. Her family, initially reluctant, now proudly supports her aspirations to pursue sports professionally.',
-                'image' => 'story-priya.jpg',
-                'beneficiary_name' => 'Priya',
-                'beneficiary_title' => 'School Football Team Captain',
-                'date' => '2023-12-05',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-        ]);
-
         // Publications
         DB::table('publications')->insert([
             [
@@ -388,7 +336,7 @@ Priya (name changed), 16, never imagined she could play football. Growing up in 
         echo "  - Executive Committee: 6 members\n";
         echo "  - Team Members: 6 staff\n";
         echo "  - Programs: 5 programs\n";
-        echo "  - Success Stories: 4 stories\n";
+        echo "  - Success Stories: 0 demo stories\n";
         echo "  - Publications: 4 items\n";
     }
 }

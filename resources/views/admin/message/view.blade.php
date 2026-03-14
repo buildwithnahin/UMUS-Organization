@@ -38,7 +38,7 @@
                         </div>
                         <div class="col-11">
                             <p>
-                                {{ $message->message }}
+                                {!! nl2br(e($message->message)) !!}
                             </p>
                         </div>
                     </div>
@@ -53,3 +53,4 @@
     </div>
 </div>
 @endsection
+

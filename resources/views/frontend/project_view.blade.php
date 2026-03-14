@@ -29,7 +29,7 @@
                     {{ date("d/m/Y  h:i:s a") }}
                 </p>
                 <p style="text-align:justify;">
-                    {{ $project->description }}
+                    {!! nl2br(e($project->description)) !!}
                 </p>
             </div>
             <div class="py-3">
@@ -42,3 +42,4 @@
   </section><!-- End Ongoing Project Section -->
 
 @endsection
+

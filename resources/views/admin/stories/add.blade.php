@@ -39,7 +39,7 @@
                             @enderror
                         </div>
                         <div class="col-md-12">
-                            <label for="img" class="form-label">Image</label>
+                            <label for="img" class="form-label">Image (Optional)</label>
                             <input type="file" name="image" class="form-control @error('image') is-invalid @enderror" id="img">
                             @error('image')
                                 <div class="text-danger">{{ $message }}</div>
@@ -66,3 +66,4 @@
     </div>
 </div>
 @endsection
+

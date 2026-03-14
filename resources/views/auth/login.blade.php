@@ -114,7 +114,22 @@
     .form-control.is-invalid {
         border-color: #dc3545;
     }
-    
+
+    .password-toggle-icon {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #6c757d;
+        z-index: 10;
+        padding: 5px;
+    }
+
+    .password-toggle-icon:hover {
+        color: #9B59B6;
+    }
+
     .btn-login {
         background: linear-gradient(135deg, #9B59B6 0%, #764ba2 100%);
         border: none;
@@ -224,22 +239,25 @@
                     <label for="password" class="form-label">
                         <i class="fa-solid fa-lock me-2"></i>Password
                     </label>
-                    <input 
-                        type="password" 
-                        class="form-control @error('password') is-invalid @enderror" 
-                        name="password" 
-                        id="password" 
-                        placeholder="Enter your password"
-                        required
-                        autocomplete="current-password"
-                    />
+                    <div class="position-relative">
+                        <input
+                            type="password"
+                            class="form-control @error('password') is-invalid @enderror"
+                            name="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                            autocomplete="current-password"
+                        />
+                        <i class="fa-solid fa-eye-slash password-toggle-icon" id="togglePassword"></i>
+                    </div>
                     @error('password')
-                        <div class="invalid-feedback">
+                        <div class="invalid-feedback d-block mt-1">
                             <i class="fa-solid fa-circle-exclamation me-1"></i>{{ $message }}
                         </div>
                     @enderror
                 </div>
-                
+
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <div class="form-check">
                         <input 
@@ -267,4 +285,25 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+
+        if (togglePassword && password) {
+            togglePassword.addEventListener("click", function() {
+                // Toggle the type attribute
+                const type = password.getAttribute("type") === "password" ? "text" : "password";
+                password.setAttribute("type", type);
+                
+                // Toggle the icon
+                this.classList.toggle("fa-eye");
+                this.classList.toggle("fa-eye-slash");
+            });
+        }
+    });
+</script>
+
 @endsection
+

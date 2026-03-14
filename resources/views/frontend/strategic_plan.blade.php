@@ -34,7 +34,7 @@
                   <div class="card-footer">
                     <h5 class="fw-bold">{{ $plan->title }}</h5>
                     @if (!empty($plan->description))
-                      <h6 class="text-dark">{{ $plan->description }}</h6>
+                      <h6 class="text-dark">{!! nl2br(e($plan->description)) !!}</h6>
                     @endif
                   </div>
                 </div>
@@ -52,3 +52,4 @@
   <!-- End Strategic Plan Section -->
 
 @endsection
+

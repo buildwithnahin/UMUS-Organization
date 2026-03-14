@@ -31,7 +31,7 @@
                 <h5 class="text-muted">{{ $item->metric_unit }}</h5>
                 <p class="card-title font-weight-bold">{{ $item->title }}</p>
                 @if($item->description)
-                <p class="card-text small text-secondary">{{ $item->description }}</p>
+                <p class="card-text small text-secondary">{!! nl2br(e($item->description)) !!}</p>
                 @endif
                 @if($item->year)
                 <p class="text-muted small">Year: {{ $item->year }}</p>
@@ -50,3 +50,4 @@
   <!-- End Impact Section -->
 
 @endsection
+

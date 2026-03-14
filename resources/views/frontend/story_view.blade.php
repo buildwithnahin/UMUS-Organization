@@ -38,7 +38,7 @@
                     @endfor
                 </div>
                 <p style="text-align: justify; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; max-width: 100%;">
-                    {{ $story->description }}
+                    {!! nl2br(e($story->description)) !!}
                 </p>
                 @if($story->date)
                 <p class="text-muted"><small><strong>Date:</strong> {{ date('F d, Y', strtotime($story->date)) }}</small></p>
@@ -58,3 +58,4 @@
 
 
 @endsection
+

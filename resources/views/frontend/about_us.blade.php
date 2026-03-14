@@ -21,7 +21,7 @@
       <div class="section-title bg-white py-5 px-3">
         <h2>About UMUS</h2>
         <p style="text-align:justify;">
-            {{ $about_us->description }}
+            {!! nl2br(e($about_us->description ?? '')) !!}
         </p>
       </div>
 
@@ -29,3 +29,4 @@
   </section><!-- End Contact Section -->
 
 @endsection
+

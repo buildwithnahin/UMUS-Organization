@@ -39,7 +39,7 @@
 
                 <h3 class="mt-3 mb-3">{{ $program->title }}</h3>
                 <p style="text-align: justify; line-height: 1.8; font-size: 1.05rem;">
-                    {{ $program->description }}
+                    {!! nl2br(e($program->description)) !!}
                 </p>
                 <div class="py-3">
                     <a href="{{ route('programs.all') }}" class="btn btn-danger"> <i class="fa fa-angle-left" aria-hidden="true"></i> Back to Programs</a>
@@ -53,3 +53,4 @@
 
 
 @endsection
+

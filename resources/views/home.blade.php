@@ -23,7 +23,7 @@ Uddipto Mohila Unnayan Sangstha
                             </h1>
                             <div class="slider-divider mb-3" data-aos="fade-up" data-aos-delay="200"></div>
                             <p class="text-white slider-description mb-4" data-aos="fade-up" data-aos-delay="300">
-                                {{ $slide->description }}
+                                {!! nl2br(e($slide->description)) !!}
                             </p>
                             <a href="{{ route('donate') }}" class="btn btn-warning btn-lg slider-btn" data-aos="fade-up" data-aos-delay="400">
                                 <i class="fa-solid fa-sack-dollar"></i> Donate Now
@@ -250,13 +250,73 @@ Uddipto Mohila Unnayan Sangstha
 {{-- Who we are --}}
 <div class="bg-light py-5">
     <div class="container bg-white px-4 py-5">
+        @php
+            $defaultWhoWeAreSummary = 'Uddipto Mohila Unnayan Sangstha (UMUS) is a non-governmental organization dedicated to empowering Dalit women and children in Satkhira district, Bangladesh. We work tirelessly to strengthen social security, promote legal rights, and build leadership capacity among marginalized communities.';
+
+            $defaultGoals = [
+                [
+                    'title' => 'Legal Rights Advocacy',
+                    'description' => 'Promoting and protecting the rights of marginalized women and children',
+                ],
+                [
+                    'title' => 'Essential Services',
+                    'description' => 'Healthcare, legal aid, and education access for all',
+                ],
+                [
+                    'title' => 'Leadership Development',
+                    'description' => 'Building capacity and confidence in Dalit women and girls',
+                ],
+                [
+                    'title' => 'Income Generation',
+                    'description' => 'Skills training and economic empowerment programs',
+                ],
+            ];
+
+            $whoWeAreGoals = [];
+            $goalLines = preg_split('/\r\n|\r|\n/', trim((string)($mission_vision->goals ?? '')));
+
+            foreach ($goalLines as $line) {
+                $line = trim($line);
+                if ($line === '') {
+                    continue;
+                }
+
+                $title = $line;
+                $description = '';
+
+                if (str_contains($line, '|')) {
+                    [$title, $description] = array_map('trim', explode('|', $line, 2));
+                } elseif (str_contains($line, ':')) {
+                    [$title, $description] = array_map('trim', explode(':', $line, 2));
+                } elseif (str_contains($line, ' - ')) {
+                    [$title, $description] = array_map('trim', explode(' - ', $line, 2));
+                }
+
+                $whoWeAreGoals[] = [
+                    'title' => $title,
+                    'description' => $description,
+                ];
+            }
+
+            if (empty($whoWeAreGoals)) {
+                $whoWeAreGoals = $defaultGoals;
+            } else {
+                foreach ($whoWeAreGoals as $index => $goal) {
+                    if ($goal['description'] === '') {
+                        $whoWeAreGoals[$index]['description'] = $defaultGoals[$index]['description'] ?? '';
+                    }
+                }
+                $whoWeAreGoals = array_slice(array_merge($whoWeAreGoals, $defaultGoals), 0, 4);
+            }
+        @endphp
+
         <!-- Section Header -->
         <div class="text-center mb-5">
             <div class="mb-3">
                 <i class="fa-solid fa-users" style="font-size: 3rem; color: #9B59B6;"></i>
             </div>
             <h2 class="fw-bold mb-3">Who <span style="color: #9B59B6;">We Are</span></h2>
-            <p class="text-secondary fs-5 mb-0">Empowering marginalized communities in Satkhira since 2003</p>
+            <p class="text-secondary fs-5 mb-0">{{ $mission_vision->vision ?? 'Empowering marginalized communities in Satkhira since 2003' }}</p>
         </div>
 
         <!-- About Description -->
@@ -268,45 +328,20 @@ Uddipto Mohila Unnayan Sangstha
                         Our Mission & Purpose
                     </h5>
                     <p class="text-secondary mb-3" style="line-height: 1.8; text-align: justify;">
-                        <strong>Uddipto Mohila Unnayan Sangstha (UMUS)</strong> is a non-governmental organization dedicated to empowering Dalit women and children in Satkhira district, Bangladesh. We work tirelessly to strengthen social security, promote legal rights, and build leadership capacity among marginalized communities.
+                        {!! nl2br(e($about_us->description ?? $mission_vision->mission ?? $defaultWhoWeAreSummary)) !!}
                     </p>
                     <div class="row g-3 mt-3">
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-start">
-                                <i class="fa-solid fa-check-circle me-3 mt-1" style="color: #9B59B6;"></i>
-                                <div>
-                                    <strong class="text-dark">Legal Rights Advocacy</strong>
-                                    <p class="text-secondary mb-0 small">Promoting and protecting the rights of marginalized women and children</p>
+                        @foreach ($whoWeAreGoals as $goal)
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fa-solid fa-check-circle me-3 mt-1" style="color: #9B59B6;"></i>
+                                    <div>
+                                        <strong class="text-dark">{{ $goal['title'] }}</strong>
+                                        <p class="text-secondary mb-0 small">{{ $goal['description'] }}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-start">
-                                <i class="fa-solid fa-check-circle me-3 mt-1" style="color: #9B59B6;"></i>
-                                <div>
-                                    <strong class="text-dark">Essential Services</strong>
-                                    <p class="text-secondary mb-0 small">Healthcare, legal aid, and education access for all</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-start">
-                                <i class="fa-solid fa-check-circle me-3 mt-1" style="color: #9B59B6;"></i>
-                                <div>
-                                    <strong class="text-dark">Leadership Development</strong>
-                                    <p class="text-secondary mb-0 small">Building capacity and confidence in Dalit women and girls</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-start">
-                                <i class="fa-solid fa-check-circle me-3 mt-1" style="color: #9B59B6;"></i>
-                                <div>
-                                    <strong class="text-dark">Income Generation</strong>
-                                    <p class="text-secondary mb-0 small">Skills training and economic empowerment programs</p>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -1050,68 +1085,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
             @empty
-            {{-- Default Story Cards if no stories exist --}}
-            <div class="col story-item" data-rating="5">
-                <div class="card border-0 shadow h-100">
-                    <div class="card-body d-flex flex-column">
-                        <div class="mb-3">
-                            <span class="text-warning fs-5">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                        </div>
-                        <p class="text-secondary mb-4 flex-grow-1" style="font-style: italic; line-height: 1.6;">
-                            <i class="fa fa-quote-left text-danger me-2"></i>UMUS transformed my life through their education program. Now I can read and write, and I'm teaching other women in my village.<i class="fa fa-quote-right text-danger ms-2"></i>
-                        </p>
-                        <div class="d-flex align-items-center mt-auto pt-3 border-top">
-                            <div class="rounded-circle bg-light border border-2 border-danger d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
-                                <i class="fa fa-user text-secondary"></i>
-                            </div>
-                            <div class="ms-3">
-                                <h6 class="mb-0 text-dark">Rahima Begum</h6>
-                                <small class="text-muted">Education Program Beneficiary</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col story-item" data-rating="5">
-                <div class="card border-0 shadow h-100">
-                    <div class="card-body d-flex flex-column">
-                        <div class="mb-3">
-                            <span class="text-warning fs-5">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                        </div>
-                        <p class="text-secondary mb-4 flex-grow-1" style="font-style: italic; line-height: 1.6;">
-                            <i class="fa fa-quote-left text-danger me-2"></i>Thanks to UMUS's healthcare initiative, my family now has access to essential medical services we never had before.<i class="fa fa-quote-right text-danger ms-2"></i>
-                        </p>
-                        <div class="d-flex align-items-center mt-auto pt-3 border-top">
-                            <div class="rounded-circle bg-light border border-2 border-danger d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
-                                <i class="fa fa-user text-secondary"></i>
-                            </div>
-                            <div class="ms-3">
-                                <h6 class="mb-0 text-dark">Abdul Karim</h6>
-                                <small class="text-muted">Healthcare Program Beneficiary</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col story-item" data-rating="4">
-                <div class="card border-0 shadow h-100">
-                    <div class="card-body d-flex flex-column">
-                        <div class="mb-3">
-                            <span class="text-warning fs-5">&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="text-muted" style="opacity: 0.3;">&#9733;</span>
-                        </div>
-                        <p class="text-secondary mb-4 flex-grow-1" style="font-style: italic; line-height: 1.6;">
-                            <i class="fa fa-quote-left text-danger me-2"></i>UMUS's skills training helped me start my own small business. I can now support my family independently.<i class="fa fa-quote-right text-danger ms-2"></i>
-                        </p>
-                        <div class="d-flex align-items-center mt-auto pt-3 border-top">
-                            <div class="rounded-circle bg-light border border-2 border-danger d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
-                                <i class="fa fa-user text-secondary"></i>
-                            </div>
-                            <div class="ms-3">
-                                <h6 class="mb-0 text-dark">Fatema Khatun</h6>
-                                <small class="text-muted">Skills Development Beneficiary</small>
-                            </div>
-                        </div>
+            <div class="col-12">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body py-5 text-center text-muted">
+                        No success stories available at the moment.
                     </div>
                 </div>
             </div>
@@ -1367,3 +1344,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 </script>
 @endpush
+

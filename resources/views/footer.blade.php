@@ -107,9 +107,8 @@
 
 {{-- copyright --}}
 <div class="p-3" style="background: #000;">
-    <div class="container text-white d-flex justify-content-between">
+    <div class="container text-white d-flex justify-content-center">
        <small> Copyright © {{ date('Y') }} || All right reserved by <abbr title="Uddipto Mohila Unnayan Sangstha">UMUS</abbr></small>
-       <small> Developed By: <span title="Noakhali Science and Technology University">NSTU</span> Software Development Team</small>
     </div>
 </div>
 
